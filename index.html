@@ -14,7 +14,6 @@
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Oswald:wght@500;700&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
   <script>
-    // Configure Tailwind theme extensions
     tailwind.config = {
       darkMode: 'class',
       theme: {
@@ -41,7 +40,6 @@
   </script>
 
   <style>
-    /* Custom keyframe animations & periodic table visual accents */
     @keyframes sirenFlash {
       0%, 100% {
         background-color: rgba(220, 38, 38, 0.88);
@@ -63,11 +61,6 @@
       50% { transform: translateY(-6px); }
     }
 
-    @keyframes scanline {
-      0% { transform: translateY(-100%); }
-      100% { transform: translateY(1000%); }
-    }
-
     .siren-overlay {
       animation: sirenFlash 0.55s infinite;
     }
@@ -80,7 +73,6 @@
       animation: floatSlow 4s ease-in-out infinite;
     }
 
-    /* Periodic Table Tile styling */
     .periodic-tile {
       background: linear-gradient(145deg, #257a44 0%, #144d2a 60%, #0d331c 100%);
       border: 2px solid #5be38f;
@@ -93,7 +85,6 @@
       box-shadow: 0 0 18px rgba(56, 189, 248, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.25);
     }
 
-    /* Subtle chemistry grid background */
     .lab-grid-bg {
       background-image:
         radial-gradient(circle at 15% 20%, rgba(46, 204, 113, 0.08) 0%, transparent 40%),
@@ -103,7 +94,6 @@
       background-size: 100% 100%, 100% 100%, 36px 36px, 36px 36px;
     }
 
-    /* Custom Scrollbar */
     ::-webkit-scrollbar {
       width: 8px;
       height: 8px;
@@ -139,7 +129,7 @@
           <span id="dea-status-text" class="font-semibold text-lab-toxic">LOW — แฮงค์กำลังสะสมหินแร่อยู่บ้าน</span>
         </div>
         <div class="flex items-center gap-3 text-gray-400 font-mono text-xs">
-          <span class="hidden md:inline">ALBUQUERQUE, NM • 35.0844° N</span>
+          <span class="hidden md:inline">ALBUQUERQUE, NM • เปิดรับออเดอร์ 24 ชม.</span>
           <span class="text-lab-hazmat">⚠️ เว็บล้อเลียนเพื่อความฮา 100%</span>
         </div>
       </div>
@@ -164,9 +154,8 @@
           </div>
         </a>
 
-        <!-- Action Buttons: Panic Mode, Trigger Raid, Sound Toggle, Cart -->
+        <!-- Action Buttons -->
         <div class="flex items-center gap-2 sm:gap-3">
-          <!-- Trigger DEA Raid Fun Button -->
           <button
             onclick="triggerDeaRaid('manual')"
             title="จำลองโดนแฮงค์บุกจับ!"
@@ -214,19 +203,19 @@
 
             <h1 class="text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight">
               <span class="inline-flex items-center align-middle mr-1">
-                <span class="periodic-tile rounded-lg px-2.5 py-1 text-white font-display text-3xl sm:text-5xl leading-none mr-1">Br</span>eaking
+                <span class="periodic-tile rounded-lg px-2.5 py-1 text-white font-display text-3xl sm:text-5xl leading-none mr-1">He</span>isenberg
               </span>
               <span class="inline-flex items-center align-middle">
-                <span class="periodic-tile-blue rounded-lg px-2.5 py-1 text-white font-display text-3xl sm:text-5xl leading-none mr-1">Sh</span>op
+                <span class="periodic-tile-blue rounded-lg px-2.5 py-1 text-white font-display text-3xl sm:text-5xl leading-none mr-1">Ma</span>rket
               </span>
               <span class="block mt-3 text-xl sm:text-3xl font-medium text-lab-crystal">
-                ความบริสุทธิ์ 99.1% <span class="text-gray-300 font-light">(เฉพาะน้ำตาลและความฮา)</span>
+                ความบริสุทธิ์ 99.1% <span class="text-gray-300 font-light">(ลูกอมน้ำตาลกรวดสีฟ้าเพื่อความฮา)</span>
               </span>
             </h1>
 
             <p class="text-gray-400 text-sm sm:text-base max-w-2xl leading-relaxed">
-              ยินดีต้อนรับสู่แล็บขายของ(เล่น)ระดับตำนานกลางทะเลทรายนิวเม็กซิโก! รวมลูกอมรสมินต์เย็นเจี๊ยบ แป้งทอดไก่สูตรลับ และอุปกรณ์สายลับที่อาจารย์วอลต์กับเจสซี่รับประกันความปั่น —
-              <span class="text-lab-hazmat font-medium italic">"Yeah, Science! กดซื้อเล่นได้จริง ไม่เสียตังค์สักบาท!"</span>
+              ยินดีต้อนรับสู่แล็บขายของ(เล่น)กลางทะเลทรายอัลบูเคอร์คี! รวมลูกอมน้ำตาลกรวดสีฟ้าสูตรต้นตำรับ แป้งชุบทอดไก่สูตรลับ Los Pollos และอุปกรณ์ป้องกันสารเคมี —
+              <span class="text-lab-hazmat font-medium italic">"สั่งขั้นต่ำ ฿500 สูงสุด 10 ถุง/ออเดอร์ • กดเล่นได้จริง ไม่เสียตังค์สักบาท!"</span>
             </p>
 
             <!-- Purity Meter Interactive Card -->
@@ -242,7 +231,7 @@
                 <div id="purity-bar" class="h-full rounded-full bg-gradient-to-r from-lab-green via-lab-toxic to-lab-crystal transition-all duration-1000" style="width: 99.1%"></div>
               </div>
               <div class="mt-3 flex flex-wrap items-center justify-between gap-2 text-xs text-gray-400">
-                <span id="purity-comment">"นี่มันระดับศิลปะ... ไม่ใช่แค่ลูกอมรสมินต์!" — Mr. White</span>
+                <span id="purity-comment">"นี่มันระดับศิลปะ... ลูกอมน้ำตาลกรวดสีฟ้าบริสุทธิ์ 99.1%!" — Mr. White</span>
                 <button onclick="retestPurity()" class="text-lab-hazmat hover:underline font-mono font-semibold">
                   [🔬 ตรวจความบริสุทธิ์ใหม่]
                 </button>
@@ -267,9 +256,8 @@
           <div class="lg:col-span-5 flex justify-center">
             <div class="relative w-full max-w-sm bg-lab-card/80 border border-lab-border rounded-3xl p-6 shadow-2xl overflow-hidden">
               <div class="absolute top-3 right-3 px-2.5 py-1 rounded-lg bg-sky-500/20 border border-sky-400/40 text-sky-300 font-mono text-xs">
-                C₁₂H₂₂O₁₁ (น้ำตาลล้วน)
+                C₁₂H₂₂O₁₁ (ลูกอมน้ำตาลกรวด)
               </div>
-              <!-- Custom Flask & Crystal SVG -->
               <svg viewBox="0 0 320 280" class="w-full h-auto float-slow" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                   <linearGradient id="blueCrystalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -287,33 +275,26 @@
                     <stop offset="100%" stop-color="#ffffff" stop-opacity="0.2" />
                   </linearGradient>
                 </defs>
-                <!-- Background Chemistry Hexagons -->
                 <g stroke="#1f6f3d" stroke-width="1.5" fill="none" opacity="0.35">
                   <polygon points="55,40 80,25 105,40 105,70 80,85 55,70" />
                   <polygon points="225,55 250,40 275,55 275,85 250,100 225,85" />
                   <polygon points="235,175 260,160 285,175 285,205 260,220 235,205" />
                 </g>
-                <!-- Steam / Bubbles -->
                 <circle cx="155" cy="45" r="5" fill="#38bdf8" opacity="0.6" />
                 <circle cx="172" cy="30" r="8" fill="#2ecc71" opacity="0.45" />
                 <circle cx="145" cy="22" r="4" fill="#bae6fd" opacity="0.7" />
-                <!-- Erlenmeyer Flask -->
                 <path d="M135,65 L185,65 L185,78 L178,78 L178,125 L235,222 C240,231 234,242 223,242 L97,242 C86,242 80,231 85,222 L142,125 L142,78 L135,78 Z" fill="url(#glassShine)" stroke="#94a3b8" stroke-width="3" />
-                <!-- Liquid inside Flask -->
                 <path d="M114,175 Q160,163 206,175 L231,220 C235,228 230,237 220,237 L100,237 C90,237 85,228 89,220 Z" fill="url(#toxicLiquid)" />
-                <!-- Floating Blue Sugar Crystals -->
                 <g class="crystal-glow">
                   <polygon points="120,225 138,195 156,210 144,233" fill="url(#blueCrystalGrad)" stroke="#e0f2fe" stroke-width="1.5" />
                   <polygon points="155,232 175,188 198,208 182,235" fill="url(#blueCrystalGrad)" stroke="#e0f2fe" stroke-width="1.5" />
                   <polygon points="188,228 205,202 220,218 208,234" fill="url(#blueCrystalGrad)" stroke="#e0f2fe" stroke-width="1.2" />
                 </g>
-                <!-- Measurement lines -->
                 <g stroke="#e2e8f0" stroke-width="2" opacity="0.6">
                   <line x1="148" y1="150" x2="164" y2="150" />
                   <line x1="142" y1="175" x2="158" y2="175" />
                   <line x1="132" y1="200" x2="148" y2="200" />
                 </g>
-                <!-- Signature Hat Silhouette floating bottom-left -->
                 <g transform="translate(22, 188) scale(0.75)">
                   <ellipse cx="42" cy="52" rx="40" ry="10" fill="#18181b" stroke="#f1c40f" stroke-width="2" />
                   <path d="M18,50 L24,22 Q42,14 60,22 L66,50 Z" fill="#18181b" stroke="#f1c40f" stroke-width="2" />
@@ -332,14 +313,13 @@
 
     <!-- Product Catalog Section -->
     <main id="catalog" class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 py-10 sm:py-14">
-      <!-- Section Header + Category Filters -->
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
         <div>
           <div class="flex items-center gap-2 mb-2">
             <span class="periodic-tile rounded px-2 py-0.5 font-display text-xl text-white font-bold">Pr</span>
             <h2 class="text-2xl sm:text-3xl font-bold tracking-tight">oduct Catalog — คลังสินค้าลับ</h2>
           </div>
-          <p class="text-gray-400 text-sm">คลิก <span class="text-lab-crystal font-medium">"ส่องรายละเอียดแล็บ"</span> เพื่อดูส่วนผสมและรีวิวสุดปั่นจากลูกค้าขาประจำ</p>
+          <p class="text-gray-400 text-sm">คลิก <span class="text-lab-crystal font-medium">"ส่องรายละเอียดแล็บ"</span> เพื่อดูส่วนผสมและรีวิวจากลูกค้าขาประจำ (หยิบครบ 5 ชิ้นขึ้นไป DEA Threat จะพุ่งสูงสุด!)</p>
         </div>
 
         <!-- Filter Pills -->
@@ -348,10 +328,10 @@
             ทั้งหมด (8)
           </button>
           <button onclick="filterProducts('lab')" data-filter="lab" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-lab-card text-gray-300 border border-lab-border hover:border-lab-toxic transition-all">
-            💎 สูตรปรุงพิเศษ
+            💎 ลูกอมคริสตัล & สูตรลับ
           </button>
           <button onclick="filterProducts('gear')" data-filter="gear" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-lab-card text-gray-300 border border-lab-border hover:border-lab-toxic transition-all">
-            📱 อุปกรณ์สายลับ
+            🦺 อุปกรณ์ป้องกัน & แฟชั่น
           </button>
           <button onclick="filterProducts('service')" data-filter="service" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-lab-card text-gray-300 border border-lab-border hover:border-lab-toxic transition-all">
             🚐 บริการ & ทัวร์
@@ -360,31 +340,70 @@
       </div>
 
       <!-- Product Grid -->
-      <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <!-- Rendered dynamically by JS -->
-      </div>
+      <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
 
-      <!-- Promo Code Hints Banner -->
+      <!-- Promo Code Hints Banner (Aligned with 04-promotions.txt) -->
       <div class="mt-12 bg-gradient-to-r from-lab-card via-emerald-950/40 to-lab-card border border-lab-border rounded-2xl p-5 sm:p-6 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
         <div class="space-y-1">
           <div class="flex items-center gap-2 text-lab-hazmat font-bold text-base sm:text-lg">
             <span>🎟️</span>
-            <span>โค้ดลับประจำแล็บ (ก๊อปไปใส่ในถุงซิปล็อกได้เลย!)</span>
+            <span>โค้ดส่วนลดลับประจำแล็บ (ใช้ได้ 1 โค้ดต่อ 1 ออเดอร์)</span>
           </div>
-          <p class="text-gray-400 text-xs sm:text-sm">คลิกที่โค้ดเพื่อคัดลอก หรือเปิดถุงซิปล็อกแล้วกดใช้งานทันที</p>
+          <p class="text-gray-400 text-xs sm:text-sm">คลิกที่โค้ดเพื่อเปิดถุงซิปล็อกและทดสอบเงื่อนไขส่วนลดทันที</p>
         </div>
         <div class="flex flex-wrap gap-2.5">
           <button onclick="applyQuickPromo('HEISENBERG')" class="px-3.5 py-2 rounded-xl bg-black/60 hover:bg-lab-green/40 border border-lab-toxic/50 font-mono text-xs sm:text-sm text-lab-toxic transition-all active:scale-95">
-            HEISENBERG <span class="text-gray-300 font-sans">(ลด 20%)</span>
+            HEISENBERG <span class="text-gray-300 font-sans">(ลด 20% ขั้นต่ำ ฿3,000)</span>
           </button>
           <button onclick="applyQuickPromo('YO')" class="px-3.5 py-2 rounded-xl bg-black/60 hover:bg-yellow-900/40 border border-lab-hazmat/50 font-mono text-xs sm:text-sm text-lab-hazmat transition-all active:scale-95">
-            YO <span class="text-gray-300 font-sans">(ลด ฿100)</span>
+            YO <span class="text-gray-300 font-sans">(ลด ฿500 หมวด Jesse / ขั้นต่ำ ฿1,500)</span>
           </button>
           <button onclick="applyQuickPromo('SAUL')" class="px-3.5 py-2 rounded-xl bg-black/60 hover:bg-sky-900/40 border border-lab-crystal/50 font-mono text-xs sm:text-sm text-lab-crystal transition-all active:scale-95">
-            SAUL <span class="text-gray-300 font-sans">(ส่งฟรี!)</span>
+            SAUL <span class="text-gray-300 font-sans">(ส่งฟรี ฿0 ไม่จำกัดขั้นต่ำ)</span>
           </button>
         </div>
       </div>
+
+      <!-- Lab Contact Directory (Aligned with 08-contact.txt) -->
+      <section class="mt-12 bg-lab-card/80 border border-lab-border rounded-2xl p-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 mb-5 border-b border-lab-border">
+          <div>
+            <h3 class="text-lg font-bold text-white flex items-center gap-2">
+              <span>📞</span> ช่องทางติดต่อทีมงาน Heisenberg Market
+            </h3>
+            <p class="text-xs text-gray-400">วันจันทร์–ศุกร์ 08.30 ถึง 16.30 น. (ปิดพักกลางวัน 12.00 ถึง 13.00 น. • เสาร์–อาทิตย์ ปิดทำการ)</p>
+          </div>
+          <span class="text-xs font-mono px-2.5 py-1 rounded-lg bg-emerald-950/60 border border-lab-toxic/40 text-lab-toxic">
+            ALBUQUERQUE HQ
+          </span>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs sm:text-sm">
+          <div class="p-4 rounded-xl bg-black/40 border border-lab-border space-y-1">
+            <div class="font-bold text-lab-crystal">ฝ่ายควบคุมการผลิต (Heisenberg Lab)</div>
+            <div class="text-gray-400 text-xs">รถบ้าน RV ทะเลทรายอัลบูเคอร์คี</div>
+            <div class="font-mono text-lab-toxic font-semibold pt-1">โทร 505-503-4401</div>
+            <p class="text-gray-500 text-xs">ดูแลเรื่องสูตรการผลิตและความบริสุทธิ์</p>
+          </div>
+          <div class="p-4 rounded-xl bg-black/40 border border-lab-border space-y-1">
+            <div class="font-bold text-lab-hazmat">ฝ่ายจัดส่งและลูกค้า (Jesse Pinkman)</div>
+            <div class="text-gray-400 text-xs">ชั้น 2 อู่ซ่อมรถ</div>
+            <div class="font-mono text-lab-toxic font-semibold pt-1">โทร 505-503-4402</div>
+            <p class="text-gray-500 text-xs">ดูแลเรื่องการจัดส่ง ยกเลิกออเดอร์ และโค้ดส่วนลด</p>
+          </div>
+          <div class="p-4 rounded-xl bg-black/40 border border-lab-border space-y-1">
+            <div class="font-bold text-orange-300">ฝ่ายจัดการและคลัง (Los Pollos)</div>
+            <div class="text-gray-400 text-xs">สาขาหลัก เมืองอัลบูเคอร์คี</div>
+            <div class="font-mono text-lab-toxic font-semibold pt-1">โทร 505-503-4403</div>
+            <p class="text-gray-500 text-xs">ดูแลการสั่งซื้อเกิน 10 ถุง และขนส่งทางรถขนไก่</p>
+          </div>
+          <div class="p-4 rounded-xl bg-black/40 border border-lab-border space-y-1">
+            <div class="font-bold text-red-300">สำนักงานกฎหมาย (Saul Goodman)</div>
+            <div class="text-gray-400 text-xs">ศูนย์การค้า Strip Mall ห้อง 4</div>
+            <div class="font-mono text-lab-toxic font-semibold pt-1">โทร 505-503-4455</div>
+            <p class="text-gray-500 text-xs">ดูแลเรื่องคดีความ ประกันตัว และกรณีแฮงค์บุกจับ</p>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- Footer with Clear Humorous Parody Disclaimer -->
@@ -397,7 +416,7 @@
               <h3 class="font-bold text-lab-hazmat text-sm sm:text-base">คำเตือนสำคัญ (Parody Disclaimer)</h3>
               <p class="text-gray-300 text-xs sm:text-sm leading-relaxed">
                 เว็บไซต์ <strong>Heisenberg Market</strong> นี้เป็น <strong>เว็บ Static ล้อเลียน (Parody / Satire)</strong> ที่สร้างขึ้นเพื่อความบันเทิงและกดเล่นขำๆ เท่านั้น โดยได้แรงบันดาลใจจากซีรีส์ <em>Breaking Bad</em>
-                ไม่มีการจำหน่ายสินค้าผิดกฎหมาย ไม่มีระบบรับเงินจริง ไม่มีการเก็บข้อมูลส่วนตัว และไม่มีรถบ้านขับไปส่งของหน้าบ้านคุณแน่นอนครับ! (พี่ตำรวจและพี่แฮงค์ไม่ต้องบุกมานะครับ พวกเราขายแต่น้ำตาลรสมินต์กับมุกตลก 🫡)
+                สินค้าทุกชิ้นเป็นลูกอมน้ำตาลกรวดสีฟ้าและของสะสมจำลอง ไม่มีระบบรับเงินจริง ไม่มีการเก็บข้อมูลส่วนตัวครับ!
               </p>
             </div>
           </div>
@@ -414,10 +433,9 @@
   <!-- MODE 2: CAMOUFLAGE MODE (BEST QUALITY VACUUM - ED GALBRAITH)          -->
   <!-- ===================================================================== -->
   <div id="vacuum-mode" class="hidden min-h-screen bg-[#f4f1ea] text-slate-800 font-sans">
-    <!-- Boring Classic Store Banner -->
     <div class="bg-[#1e3a5f] text-white py-2 px-4 text-xs sm:text-sm">
       <div class="max-w-5xl mx-auto flex flex-wrap items-center justify-between gap-2">
-        <span>📍 1520 Albuquerque St. • เปิดบริการ จันทร์-เสาร์ 09:00 - 17:00 น.</span>
+        <span>📍 1520 Albuquerque St. • เปิดบริการ จันทร์–ศุกร์ 08.30 – 16.30 น. (พักกลางวัน 12.00–13.00 น.)</span>
         <button
           onclick="togglePanicMode(false)"
           class="px-3 py-1 rounded-lg bg-amber-400 hover:bg-amber-300 text-slate-900 font-bold text-xs shadow transition-all"
@@ -439,14 +457,13 @@
           </div>
         </div>
         <div class="text-right text-xs text-slate-500">
-          <div class="font-semibold text-slate-700">โทร: 02-555-0192 (ติดต่อช่างเอ็ด)</div>
-          <div>รับซ่อมทุกรุ่น ยกเว้นคดีอาญา</div>
+          <div class="font-semibold text-slate-700">โทร: 505-503-4455 (ติดต่อช่างเอ็ด / ทนายซอล)</div>
+          <div>รับซ่อมทุกรุ่น และบริการย้ายที่อยู่ใหม่</div>
         </div>
       </div>
     </header>
 
     <main class="max-w-5xl mx-auto px-4 py-10 space-y-8">
-      <!-- Vacuum Hero -->
       <div class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
         <div class="space-y-4">
           <span class="inline-block px-3 py-1 rounded-full bg-blue-100 text-blue-800 text-xs font-semibold">บริการซ่อมมาตรฐานตั้งแต่ปี 1984</span>
@@ -455,15 +472,14 @@
             ที่นี่ไม่มีแล็บ ไม่มีคริสตัลสีฟ้า มีแต่ถุงเก็บฝุ่น มอเตอร์เครื่องดูดฝุ่น และใบเสร็จรับเงินที่ถูกต้องตามกฎหมาย 100% ครับคุณตำรวจ เชิญดื่มน้ำเปล่าเย็นๆ ก่อนได้ครับ
           </p>
           <div class="flex flex-wrap gap-3">
-            <button onclick="showToast('ช่างเอ็ด: รหัสผ่านถูกต้อง... กำลังเตรียมตัวตนใหม่ให้คุณ (ล้อเล่น กดปุ่มเหลืองด้านบนเพื่อกลับแล็บ!)')" class="px-4 py-2.5 rounded-xl bg-[#1e3a5f] hover:bg-slate-700 text-white text-sm font-medium transition-all">
-              สอบถามอะไหล่ Hoover Max Extract® Model 60
+            <button onclick="showToast('ช่างเอ็ด: รหัสลับถูกต้อง! ชุดเอกสารเปลี่ยนตัวตนและย้ายที่อยู่ใหม่ (Vacuum Service) ชุดละ ฿125,000 ใช้เวลา 5 วันทำการ (เร่งด่วน 1 วัน เพิ่มเท่าตัว)')" class="px-4 py-2.5 rounded-xl bg-[#1e3a5f] hover:bg-slate-700 text-white text-sm font-medium transition-all">
+              พูดรหัสลับ: Hoover Max Extract Pressure Pro Model 60
             </button>
             <button onclick="togglePanicMode(false)" class="px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-bold transition-all">
               🧪 ยกเลิกโหมดพรางตัว
             </button>
           </div>
         </div>
-        <!-- Boring Vacuum SVG -->
         <div class="flex justify-center bg-slate-50 rounded-2xl p-6 border border-slate-200">
           <svg viewBox="0 0 240 180" class="w-56 h-auto" xmlns="http://www.w3.org/2000/svg">
             <rect x="45" y="100" width="110" height="45" rx="20" fill="#1e3a5f" />
@@ -478,25 +494,25 @@
         </div>
       </div>
 
-      <!-- Boring Products List -->
+      <!-- Boring Products List (Aligned with 06-certificates.txt) -->
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <div class="bg-white p-5 rounded-xl border border-slate-200">
-          <div class="text-2xl mb-2">🧼</div>
-          <h3 class="font-bold text-slate-800">ถุงเก็บฝุ่นแบบกระดาษ (แพ็ก 5 ชิ้น)</h3>
-          <p class="text-xs text-slate-500 mt-1">เก็บฝุ่นได้เกลี้ยงเกลา ไม่มีสารเคมีปนเปื้อน</p>
-          <div class="mt-3 font-bold text-[#1e3a5f]">฿199</div>
+          <div class="text-2xl mb-2">📄</div>
+          <h3 class="font-bold text-slate-800">ใบรับรองความบริสุทธิ์สินค้าจากแล็บ</h3>
+          <p class="text-xs text-slate-500 mt-1">ดำเนินการ 3 วันทำการ (เร่งด่วน 1 วันเพิ่มเท่าตัว)</p>
+          <div class="mt-3 font-bold text-[#1e3a5f]">฿500 / ฉบับ</div>
         </div>
         <div class="bg-white p-5 rounded-xl border border-slate-200">
-          <div class="text-2xl mb-2">🔧</div>
-          <h3 class="font-bold text-slate-800">บริการเปลี่ยนสายพานมอเตอร์</h3>
-          <p class="text-xs text-slate-500 mt-1">รับประกัน 3 เดือน โดยช่างเอ็ดผู้เงียบขรึม</p>
-          <div class="mt-3 font-bold text-[#1e3a5f]">฿450</div>
+          <div class="text-2xl mb-2">🍗</div>
+          <h3 class="font-bold text-slate-800">หนังสือรับรองการทำงาน Los Pollos</h3>
+          <p class="text-xs text-slate-500 mt-1">ออกโดยสาขาหลัก อัลบูเคอร์คี ภายใน 3 วันทำการ</p>
+          <div class="mt-3 font-bold text-[#1e3a5f]">฿1,000 / ฉบับ</div>
         </div>
         <div class="bg-white p-5 rounded-xl border border-amber-300 bg-amber-50/40">
           <div class="text-2xl mb-2">📦</div>
-          <h3 class="font-bold text-slate-800">ฟิลเตอร์ Hoover Max Extract Pressure Pro Model 60</h3>
-          <p class="text-xs text-slate-500 mt-1">*สำหรับลูกค้าที่ต้องการ "เริ่มต้นชีวิตใหม่" ในรัฐนิวแฮมป์เชียร์</p>
-          <div class="mt-3 font-bold text-amber-700">฿4,500,000 (เงินสดเท่านั้น)</div>
+          <h3 class="font-bold text-slate-800">ชุดเอกสารเปลี่ยนตัวตนและย้ายที่อยู่ใหม่ (Vacuum Service)</h3>
+          <p class="text-xs text-slate-500 mt-1">ดำเนินการ 5 วันทำการ (เร่งด่วนหนีการตามล่า 1 วันทำการ)</p>
+          <div class="mt-3 font-bold text-amber-700">฿125,000 / ชุด</div>
         </div>
       </div>
     </main>
@@ -510,9 +526,7 @@
       <button onclick="closeProductModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-black/60 hover:bg-red-900/70 text-gray-300 hover:text-white flex items-center justify-center transition-all z-10">
         ✕
       </button>
-      <div id="product-modal-content" class="p-5 sm:p-7">
-        <!-- Dynamically populated -->
-      </div>
+      <div id="product-modal-content" class="p-5 sm:p-7"></div>
     </div>
   </div>
 
@@ -527,7 +541,7 @@
         <span class="text-2xl">🛍️</span>
         <div>
           <h2 class="font-bold text-lg text-white leading-tight">ถุงซิปล็อกของคุณ</h2>
-          <p class="text-xs font-mono text-lab-crystal">ZIPLOC STORAGE • SEALED 99.1%</p>
+          <p class="text-xs font-mono text-lab-crystal">ขั้นต่ำ ฿500 • สูงสุด 10 ชิ้น/ออเดอร์</p>
         </div>
       </div>
       <button onclick="toggleCart(false)" class="w-9 h-9 rounded-xl bg-lab-bg hover:bg-lab-border text-gray-300 flex items-center justify-center transition-all">✕</button>
@@ -535,12 +549,12 @@
 
     <!-- Cart Scrollable Content -->
     <div class="flex-1 overflow-y-auto p-5 space-y-5">
-      <!-- Items Container -->
-      <div id="cart-items-container" class="space-y-3">
-        <!-- Rendered by JS -->
-      </div>
+      <div id="cart-items-container" class="space-y-3"></div>
 
-      <!-- Shipping Method Selector -->
+      <!-- Rule Warning Banner -->
+      <div id="cart-rule-warning" class="hidden p-3 rounded-xl bg-red-950/60 border border-red-500/50 text-xs text-red-200"></div>
+
+      <!-- Shipping Method Selector (Aligned with 02-ordering.txt) -->
       <div id="cart-extras" class="hidden space-y-5 pt-4 border-t border-lab-border">
         <div>
           <label class="block text-xs font-mono uppercase text-gray-400 mb-2">🚚 เลือกวิธีจัดส่ง (Delivery Method)</label>
@@ -549,20 +563,20 @@
               <input type="radio" name="shipping" value="rv" checked onchange="updateShipping('rv')" class="mt-1 accent-emerald-500" />
               <div class="flex-1 text-xs sm:text-sm">
                 <div class="flex justify-between font-semibold text-white">
-                  <span>🚐 รถบ้าน RV Express</span>
-                  <span class="font-mono text-lab-hazmat">฿80</span>
+                  <span>🚐 รถบ้าน RV กลางทะเลทราย</span>
+                  <span class="font-mono text-lab-hazmat">฿300</span>
                 </div>
-                <p class="text-xs text-gray-400">ช้าหน่อย แบตชอบหมดกลางทะเลทรายต้องพ่วงด้วยสังกะสี</p>
+                <p class="text-xs text-gray-400">ใช้เวลา 2 วันทำการ ส่งตรงจากทะเลทรายอัลบูเคอร์คี</p>
               </div>
             </label>
             <label class="flex items-start gap-3 p-3 rounded-xl bg-black/40 border border-lab-border cursor-pointer hover:border-lab-toxic transition-all">
               <input type="radio" name="shipping" value="pollos" onchange="updateShipping('pollos')" class="mt-1 accent-emerald-500" />
               <div class="flex-1 text-xs sm:text-sm">
                 <div class="flex justify-between font-semibold text-white">
-                  <span>🍗 รถขนไก่ Los Pollos</span>
-                  <span class="font-mono text-lab-hazmat">฿150</span>
+                  <span>🍗 รถขนไก่ Los Pollos Hermanos</span>
+                  <span class="font-mono text-lab-hazmat">฿500</span>
                 </div>
-                <p class="text-xs text-gray-400">เนียนกริบ ซ่อนในถังแป้งทอด ส่งตรงเวลาแบบกัส ฟริง</p>
+                <p class="text-xs text-gray-400">ใช้เวลา 1 วันทำการ ปลอดภัยสูงสุด แฝงมากับถังแป้งทอด</p>
               </div>
             </label>
             <label class="flex items-start gap-3 p-3 rounded-xl bg-black/40 border border-lab-border cursor-pointer hover:border-lab-toxic transition-all">
@@ -570,22 +584,22 @@
               <div class="flex-1 text-xs sm:text-sm">
                 <div class="flex justify-between font-semibold text-white">
                   <span>🕊️ นกพิราบสื่อสาร</span>
-                  <span class="font-mono text-lab-hazmat">฿40</span>
+                  <span class="font-mono text-lab-toxic">ฟรี (฿0)</span>
                 </div>
-                <p class="text-xs text-gray-400">ประหยัดสุด ไร้ร่องรอย GPS แต่อาจแวะกินข้าวโพดข้างทาง</p>
+                <p class="text-xs text-gray-400">ใช้เวลา 5 ถึง 7 วันทำการ ไม่รับประกันสินค้าสูญหาย</p>
               </div>
             </label>
           </div>
         </div>
 
-        <!-- Promo Code Input -->
+        <!-- Promo Code Input (Aligned with 04-promotions.txt) -->
         <div>
-          <label class="block text-xs font-mono uppercase text-gray-400 mb-2">🎟️ โค้ดส่วนลดลับ (Promo Code)</label>
+          <label class="block text-xs font-mono uppercase text-gray-400 mb-2">🎟️ โค้ดส่วนลดลับ (1 โค้ด/ออเดอร์)</label>
           <div class="flex gap-2">
             <input
               id="promo-input"
               type="text"
-              placeholder="ลองพิมพ์ HEISENBERG, YO, SAUL"
+              placeholder="พิมพ์ HEISENBERG, YO, SAUL"
               class="flex-1 px-3.5 py-2.5 rounded-xl bg-black/60 border border-lab-border text-sm font-mono uppercase text-white placeholder-gray-500 focus:outline-none focus:border-lab-toxic"
             />
             <button onclick="applyPromoCode()" class="px-4 py-2.5 rounded-xl bg-lab-green hover:bg-lab-toxic hover:text-black text-white font-bold text-xs sm:text-sm transition-all">
@@ -644,13 +658,12 @@
           <h2 class="text-xl font-bold text-white flex items-center gap-2">
             <span>💼</span> ยืนยันการส่งมอบลับ
           </h2>
-          <p class="text-xs font-mono text-gray-400">NO REAL MONEY • 100% FAKE PARODY CHECKOUT</p>
+          <p class="text-xs font-mono text-gray-400">ยกเลิกฟรีภายใน 15 นาทีหลังสั่งซื้อ (ก่อนรถบ้านออกเดินทาง)</p>
         </div>
         <button onclick="closeCheckoutModal()" class="w-8 h-8 rounded-lg bg-lab-bg text-gray-400 hover:text-white flex items-center justify-center">✕</button>
       </div>
 
       <form id="checkout-form" onsubmit="submitOrder(event)" class="p-5 sm:p-6 space-y-5">
-        <!-- Alias Input -->
         <div>
           <div class="flex items-center justify-between mb-1.5">
             <label for="buyer-alias" class="text-sm font-semibold text-gray-200">🕶️ Say My Name / นามแฝงของคุณ</label>
@@ -660,23 +673,21 @@
             id="buyer-alias"
             type="text"
             required
-            placeholder="เช่น Heisenberg สาขาลาดพร้าว"
+            placeholder="เช่น Heisenberg สาขาอัลบูเคอร์คี"
             class="w-full px-4 py-2.5 rounded-xl bg-black/60 border border-lab-border text-white placeholder-gray-500 focus:outline-none focus:border-lab-toxic"
           />
         </div>
 
-        <!-- Drop-off Location -->
         <div>
           <label for="dropoff-location" class="block text-sm font-semibold text-gray-200 mb-1.5">📍 จุดนัดรับของ (Dead Drop Location)</label>
           <select id="dropoff-location" class="w-full px-4 py-2.5 rounded-xl bg-black/60 border border-lab-border text-white focus:outline-none focus:border-lab-toxic">
-            <option value="กลางทะเลทรายนิวเม็กซิโก (พิกัด GPS ลับ)">🌵 กลางทะเลทรายนิวเม็กซิโก (พิกัด GPS ลับ)</option>
-            <option value="หลังร้านล้างรถ A1A Car Wash">🚗 หลังร้านล้างรถ A1A Car Wash</option>
-            <option value="ข้างถังขยะร้านไก่ทอด Los Pollos Hermanos">🍗 ข้างถังขยะร้านไก่ทอด Los Pollos Hermanos</option>
-            <option value="ป้ายรถเมล์หน้าปากซอย (ใส่แว่นดำรอ)">🚏 ป้ายรถเมล์หน้าปากซอย (ใส่แว่นดำรอ)</option>
+            <option value="กลางทะเลทรายอัลบูเคอร์คี (จุดจอดรถบ้าน RV)">🌵 กลางทะเลทรายอัลบูเคอร์คี (จุดจอดรถบ้าน RV)</option>
+            <option value="ร้านไก่ทอด Los Pollos Hermanos สาขาหลัก">🍗 ร้านไก่ทอด Los Pollos Hermanos สาขาหลัก</option>
+            <option value="หน้าร้านซ่อมเครื่องดูดฝุ่น Best Quality Vacuum">🧹 หน้าร้านซ่อมเครื่องดูดฝุ่น Best Quality Vacuum</option>
+            <option value="สำนักงานทนาย Saul Goodman (Strip Mall ห้อง 4)">⚖️ สำนักงานทนาย Saul Goodman (Strip Mall ห้อง 4)</option>
           </select>
         </div>
 
-        <!-- Fake Payment Methods -->
         <div>
           <label class="block text-sm font-semibold text-gray-200 mb-2">💰 ช่องทางชำระเงิน (ปลอมล้วนๆ)</label>
           <div class="space-y-2">
@@ -685,8 +696,8 @@
               <span class="text-sm">🛢️ เงินสดยัดถัง 200 ลิตร (ฝังดินไว้)</span>
             </label>
             <label class="flex items-center gap-3 p-3 rounded-xl bg-black/50 border border-lab-border cursor-pointer hover:border-lab-hazmat">
-              <input type="radio" name="payment" value="โอนผ่านระบบฟอกเงินร้านล้างรถ A1A" class="accent-yellow-400" />
-              <span class="text-sm">🧼 โอนผ่านระบบฟอกเงินร้านล้างรถ A1A</span>
+              <input type="radio" name="payment" value="โอนผ่านระบบบัญชีร้านล้างรถ A1A" class="accent-yellow-400" />
+              <span class="text-sm">🧼 โอนผ่านระบบบัญชีร้านล้างรถ A1A</span>
             </label>
             <label class="flex items-center gap-3 p-3 rounded-xl bg-black/50 border border-lab-border cursor-pointer hover:border-lab-hazmat">
               <input type="radio" name="payment" value="เก็บเงินปลายทาง (จ่ายหน้าบ้านห้ามสบตา)" class="accent-yellow-400" />
@@ -695,14 +706,13 @@
           </div>
         </div>
 
-        <!-- Order Summary Pill -->
         <div class="p-3.5 rounded-xl bg-emerald-950/40 border border-lab-toxic/30 flex items-center justify-between text-sm">
           <span class="text-gray-300">ยอดรวมที่ต้องจ่าย (ทิพย์):</span>
           <span id="checkout-total-preview" class="font-mono font-bold text-lab-crystal text-lg">฿0</span>
         </div>
 
         <p class="text-[11px] text-amber-300/90 text-center font-mono">
-          ⚠️ คำเตือน: มีโอกาส 25% ที่แฮงค์ ชเรเดอร์ (DEA) จะดักสัญญาณและบุกจับระหว่างปรุงออเดอร์!
+          ⚠️ คำเตือน: มีโอกาส 25% ที่เจ้าหน้าที่แฮงค์ (Hank) จะบุกจับระหว่างสั่งซื้อ! (สั่งหลัง 00.00–05.00 น. มีค่าความเสี่ยงกลางคืน ฿200)
         </p>
 
         <button type="submit" class="w-full py-3.5 rounded-xl bg-lab-hazmat hover:bg-yellow-300 text-black font-bold text-base shadow-lg shadow-yellow-500/20 transition-all active:scale-95">
@@ -721,11 +731,11 @@
         ⚗️
       </div>
       <h3 class="text-2xl font-bold text-white">กำลังปรุงออเดอร์...</h3>
-      <p id="cooking-step-text" class="text-sm font-mono text-lab-crystal min-h-[24px]">กำลังตวงน้ำตาลรสมินต์...</p>
+      <p id="cooking-step-text" class="text-sm font-mono text-lab-crystal min-h-[24px]">กำลังตวงลูกอมน้ำตาลกรวดสีฟ้า...</p>
       <div class="w-full h-4 bg-black rounded-full overflow-hidden border border-lab-border p-0.5">
         <div id="cooking-progress-bar" class="h-full rounded-full bg-gradient-to-r from-lab-toxic via-lab-crystal to-lab-hazmat transition-all duration-300" style="width: 0%"></div>
       </div>
-      <div class="text-xs font-mono text-gray-500">PLEASE WAIT • CHECKING DEA RADAR...</div>
+      <div class="text-xs font-mono text-gray-500">PLEASE WAIT • CHECKING DEA RADAR (25% RAID CHANCE)...</div>
     </div>
   </div>
 
@@ -739,17 +749,14 @@
           ✓ CERTIFIED 99.1% PURE PARODY
         </div>
         <h3 class="text-2xl font-display font-bold tracking-wider text-white">[He]ISENBERG [Ma]RKET</h3>
-        <p class="text-xs text-gray-400 mt-0.5">ใบเสร็จทิพย์ • ออเดอร์ปรุงสำเร็จเรียบร้อย!</p>
+        <p class="text-xs text-gray-400 mt-0.5">ใบเสร็จทิพย์ • ยกเลิกฟรีภายใน 15 นาที (ก่อนรถบ้านออกเดินทาง)</p>
       </div>
 
-      <div id="receipt-body" class="py-4 space-y-3 text-xs sm:text-sm font-mono">
-        <!-- Populated dynamically -->
-      </div>
+      <div id="receipt-body" class="py-4 space-y-3 text-xs sm:text-sm font-mono"></div>
 
-      <!-- Parody Stamp & Actions -->
       <div class="pt-4 border-t border-dashed border-gray-700 space-y-3">
         <div class="text-center text-xs text-lab-hazmat italic">
-          "You're goddamn right! ขอบคุณที่แวะมากดเล่นครับ"
+          "You're goddamn right! หากมีปัญหาติดต่อ Jesse (505-503-4402) หรือ Saul (505-503-4455)"
         </div>
         <div class="grid grid-cols-2 gap-2.5">
           <button onclick="copyReceiptText()" class="py-2.5 px-3 rounded-xl bg-lab-bg hover:bg-lab-border border border-lab-border text-gray-200 font-semibold text-xs transition-all">
@@ -769,10 +776,9 @@
   <div id="dea-raid-overlay" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 siren-overlay backdrop-blur-sm">
     <div class="bg-black/95 border-4 border-yellow-400 rounded-3xl max-w-lg w-full p-6 sm:p-8 text-center space-y-5 shadow-2xl">
       <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-600 text-white font-mono font-bold text-xs sm:text-sm animate-pulse">
-        🚨 WEE-WOO WEE-WOO • FEDERAL WARRANT 🚨
+        🚨 WEE-WOO WEE-WOO • DEA RAID (25%) 🚨
       </div>
 
-      <!-- Hank / DEA Badge SVG -->
       <div class="flex justify-center">
         <svg viewBox="0 0 120 120" class="w-24 h-24" xmlns="http://www.w3.org/2000/svg">
           <polygon points="60,6 76,34 108,38 85,62 92,94 60,78 28,94 35,62 12,38 44,34" fill="#facc15" stroke="#854d0e" stroke-width="4" />
@@ -790,7 +796,7 @@
           <span>👮‍♂️ ASAC Hank Schrader:</span>
         </div>
         <p id="hank-quote" class="text-gray-200 text-sm leading-relaxed">
-          "จับได้คาหนังคาเขา! นี่มันลูกอมคริสตัลสีฟ้าสูตรนายวอลเตอร์ใช่มั้ย?! เอ๊ะ... เดี๋ยวนะ แมรี่ นี่มันหินแร่ ไม่ใช่หินธรรมดา! เอ้ย ผิดเรื่อง... สรุปแกโดนรวบแล้ว!"
+          "จับได้คาหนังคาเขา! นี่มันลูกอมคริสตัลสีฟ้าสูตรนายวอลเตอร์ใช่มั้ย?! เอ๊ะ... เดี๋ยวนะ แมรี่ นี่มันหินแร่ ไม่ใช่หินธรรมดา! เอ้ย ผิดเรื่อง... สรุปออเดอร์แกโดนระงับชั่วคราวแล้ว!"
         </p>
       </div>
 
@@ -800,10 +806,10 @@
           class="w-full py-4 px-5 rounded-2xl bg-yellow-400 hover:bg-yellow-300 text-black font-extrabold text-base sm:text-lg shadow-xl shadow-yellow-500/30 transition-all active:scale-95 flex items-center justify-center gap-2"
         >
           <span>📞</span>
-          <span>โทรหาทนายซอล (Better Call Saul!)</span>
+          <span>โทรหาทนาย Saul Goodman (505-503-4455)</span>
         </button>
         <p class="text-xs font-mono text-gray-400">
-          "Did you know that you have rights? The Constitution says you do!"
+          "Better Call Saul! กดโทรหาทนายเพื่อเคลียร์คดีและกลับมาใช้งานต่อ"
         </p>
       </div>
     </div>
@@ -817,32 +823,31 @@
   <!-- ===================================================================== -->
   <script>
     // =========================================================================
-    // 1. PRODUCT DATA & CUSTOM INLINE SVG ARTWORK
+    // 1. PRODUCT DATA (ALIGNED 100% WITH docs/01-products.txt)
     // =========================================================================
     const PRODUCTS = [
       {
         id: 'blue-sky',
         category: 'lab',
         name: 'Blue Sky Crystal 99.1%',
-        thaiName: 'คริสตัลสีฟ้าสูตรอาจารย์วอลต์',
+        thaiName: 'ลูกอมน้ำตาลกรวดสีฟ้าสูตรต้นตำรับ Heisenberg',
         badge: 'BEST SELLER',
         badgeColor: 'bg-sky-500/20 text-sky-300 border-sky-400/50',
-        price: 991,
+        price: 4500,
         purity: '99.1%',
         rating: 5.0,
         reviewsCount: 420,
-        formula: 'C₁₂H₂₂O₁₁ + Mint',
-        shortDesc: 'ลูกอมกรวดน้ำตาลรสมินต์เย็นเจี๊ยบ กัดทีเดียวตื่นยันเช้า เย็นทะลุสมอง',
-        fullDesc: 'ผลึกน้ำตาลสีฟ้าเกรดพรีเมียม ผ่านกระบวนการตกผลึกด้วยอุณหภูมิที่แม่นยำระดับอาจารย์เคมีมัธยมปลาย ไร้สารเจือปน (ยกเว้นสีผสมอาหารสีฟ้าและกลิ่นเปปเปอร์มินต์ระดับขั้วโลก)',
+        formula: 'C₁₂H₂₂O₁₁ (99.1%)',
+        shortDesc: 'ลูกอมน้ำตาลกรวดสีฟ้าสูตรต้นตำรับของ Heisenberg ความบริสุทธิ์ 99.1% สำหรับสะสมและเล่นสนุก',
+        fullDesc: 'Blue Sky สูตรต้นตำรับของ Heisenberg มีความบริสุทธิ์อยู่ที่ร้อยละ 99.1 (99.1%) ราคาถุงละ 4,500 บาท เป็นลูกอมน้ำตาลกรวดสีฟ้าสำหรับสะสมและเล่นสนุกเท่านั้น',
         composition: [
-          { label: 'น้ำตาลกรวดบริสุทธิ์', pct: 75, color: 'bg-sky-400' },
-          { label: 'ความเย็นรสมินต์', pct: 24.1, color: 'bg-emerald-400' },
-          { label: 'ความฮาและอีโก้อาจารย์วอลต์', pct: 0.9, color: 'bg-yellow-400' }
+          { label: 'ลูกอมน้ำตาลกรวดสีฟ้าบริสุทธิ์', pct: 99.1, color: 'bg-sky-400' },
+          { label: 'ความฮาและอีโก้ของ Heisenberg', pct: 0.9, color: 'bg-yellow-400' }
         ],
         reviews: [
-          { user: 'Skinny Pete', stars: 5, text: 'โคตรเจ๋งเลยเพื่อน! อมแล้วลมหายใจหอมสดชื่นเหมือนเดินกลางทะเลทรายตอนตีห้า Church!' },
-          { user: 'Badger', stars: 5, text: 'ซื้อไปกินตอนดู Star Trek เพลินมากครับ แต่อย่าเผลอเคี้ยวแรงเดี๋ยวฟันแตก' },
-          { user: 'Gus Fring', stars: 5, text: 'คุณภาพเป็นไปตามมาตรฐานของผม... ยอมรับได้ (Acceptable)' }
+          { user: 'Skinny Pete', stars: 5, text: 'โคตรเจ๋งเลยเพื่อน! 99.1% ของแท้แน่นอน Church!' },
+          { user: 'Badger', stars: 5, text: 'ลูกอมน้ำตาลกรวดสีฟ้าเม็ดสวยมาก กดสั่งใส่ถุงซิปล็อกรัวๆ' },
+          { user: 'Gus Fring', stars: 5, text: 'คุณภาพ 99.1% เป็นไปตามมาตรฐานของ Los Pollos Hermanos' }
         ],
         svg: `
           <svg viewBox="0 0 200 150" class="w-full h-36" xmlns="http://www.w3.org/2000/svg">
@@ -861,32 +866,31 @@
               <polygon points="52,115 68,85 82,102 72,118" fill="#7dd3fc" stroke="#f0f9ff" stroke-width="1.2"/>
               <polygon points="126,115 142,84 156,105 144,118" fill="#0ea5e9" stroke="#f0f9ff" stroke-width="1.2"/>
             </g>
-            <text x="100" y="20" text-anchor="middle" font-size="10" fill="#7dd3fc" font-family="monospace">99.1% MINT SUGAR</text>
+            <text x="100" y="20" text-anchor="middle" font-size="10" fill="#7dd3fc" font-family="monospace">99.1% BLUE SKY</text>
           </svg>
         `
       },
       {
         id: 'chili-p',
         category: 'lab',
-        name: 'Chili P Special Edition',
-        thaiName: 'สูตรลับเจสซี่ พิงก์แมน ผสมพริกป่น',
+        name: 'Blue Sky รุ่น Chili P',
+        thaiName: 'สูตรผสมพริกป่นของ Jesse Pinkman (68.5%)',
         badge: 'YO! LIMITED',
         badgeColor: 'bg-red-500/20 text-red-300 border-red-400/50',
-        price: 499,
-        purity: '68.4%',
-        rating: 4.3,
+        price: 1800,
+        purity: '68.5%',
+        rating: 4.5,
         reviewsCount: 188,
-        formula: 'C₁₈H₂₇NO₃ (พริกป่น)',
-        shortDesc: 'ลูกอมพริกเกลือสูตร Cap\'n Cook ผสมพริกป่น Yo! เผ็ดซี๊ดยันไส้ติ่ง',
-        fullDesc: 'สูตรซิกเนเจอร์ของเจสซี่ พิงก์แมน! อาจารย์วอลต์ไม่ถูกใจสิ่งนี้ แต่สายแซ่บต้องลอง คลุกพริกป่นคั่วหอมๆ เผ็ดร้อนจนต้องตะโกนว่า "Yeah, Science, B****!"',
+        formula: 'Chili P (68.5%)',
+        shortDesc: 'Blue Sky รุ่น Chili P สูตรผสมพริกป่นของ Jesse Pinkman ความบริสุทธิ์ร้อยละ 68.5 ราคาถุงละ 1,800 บาท',
+        fullDesc: 'ลูกอมน้ำตาลกรวดสีฟ้าสูตรซิกเนเจอร์ของ Jesse Pinkman ผสมพริกป่นคั่วหอม ความบริสุทธิ์ 68.5% ใช้ร่วมกับโค้ดส่วนลด YO ได้ทันที!',
         composition: [
-          { label: 'พริกป่นคั่วสูตร Cap\'n Cook', pct: 45, color: 'bg-red-500' },
-          { label: 'น้ำตาลและเกลือชมพู', pct: 40, color: 'bg-amber-400' },
-          { label: 'คำว่า "Yo!" อัดแน่น', pct: 15, color: 'bg-emerald-400' }
+          { label: 'น้ำตาลกรวดสีฟ้าบริสุทธิ์', pct: 68.5, color: 'bg-sky-400' },
+          { label: 'พริกป่นสูตรลับ Cap\'n Cook', pct: 31.5, color: 'bg-red-500' }
         ],
         reviews: [
-          { user: 'Jesse Pinkman', stars: 5, text: 'Chili P คือลายเซ็นของฉันเว้ย Mr. White! ใครกินก็ติดใจ Yo!' },
-          { user: 'Walter White', stars: 2, text: 'ไร้สาระสิ้นดี นี่มันทำลายหลักการทางเคมีทั้งหมด... แต่ก็กินแก้ง่วงได้อยู่' },
+          { user: 'Jesse Pinkman', stars: 5, text: 'Chili P คือลายเซ็นของฉันเว้ย! ใช้โค้ด YO ลดได้อีก 500 บาท!' },
+          { user: 'Walter White', stars: 3, text: 'ความบริสุทธิ์ 68.5% เพราะแกแอบใส่พริกป่นลงไปน่ะสิเจสซี่!' },
           { user: 'Tuco Salamanca', stars: 5, text: 'TIGHT! TIGHT! TIGHT! เผ็ดสะใจโว้ยยย!!' }
         ],
         svg: `
@@ -894,36 +898,34 @@
             <circle cx="100" cy="80" r="48" fill="#450a0a" stroke="#ef4444" stroke-width="2" opacity="0.6"/>
             <path d="M72,96 C82,118 122,118 136,84 C144,64 134,42 120,48 C112,52 114,72 98,84 C86,92 68,84 72,96 Z" fill="#dc2626" stroke="#fca5a5" stroke-width="2"/>
             <path d="M122,48 C126,35 138,32 144,36" fill="none" stroke="#22c55e" stroke-width="5" stroke-linecap="round"/>
-            <circle cx="72" cy="52" r="4" fill="#facc15"/>
+            <circle cx="72" cy="52" r="4" fill="#38bdf8"/>
             <circle cx="84" cy="40" r="3" fill="#f97316"/>
             <circle cx="62" cy="68" r="3" fill="#ef4444"/>
-            <text x="100" y="138" text-anchor="middle" font-size="11" fill="#fca5a5" font-family="monospace" font-weight="bold">CHILI P • YO!</text>
+            <text x="100" y="138" text-anchor="middle" font-size="11" fill="#fca5a5" font-family="monospace" font-weight="bold">CHILI P • 68.5%</text>
           </svg>
         `
       },
       {
         id: 'pollos-batter',
         category: 'lab',
-        name: 'Los Pollos Secret Batter',
-        thaiName: 'แป้งทอดไก่สูตรกัส ฟริง',
-        badge: 'HOT & CRISPY',
+        name: 'แป้งชุบทอดสูตรลับ Los Pollos',
+        thaiName: 'Los Pollos Hermanos ถังขนาด 5 กิโลกรัม',
+        badge: '5 KG BUCKET',
         badgeColor: 'bg-yellow-500/20 text-yellow-300 border-yellow-400/50',
-        price: 350,
+        price: 2500,
         purity: '99.9%',
         rating: 4.9,
         reviewsCount: 890,
         formula: '11 Herbs & Spices',
-        shortDesc: 'แป้งชุบทอดไก่กรอบยันเช้า ส่งตรงจากถังซอส (ข้างในไม่มีอย่างอื่นซ่อนจริงๆ นะ)',
-        fullDesc: 'แป้งทอดไก่สูตรลับจากเครือ Los Pollos Hermanos ทอดแล้วสีเหลืองทอง กรอบนอกนุ่มใน มาพร้อมถังบรรจุภัณฑ์กันกระแทกอย่างดี ตรวจผ่านด่านศุลกากรทุกครั้ง!',
+        shortDesc: 'แป้งชุบทอดสูตรลับ Los Pollos Hermanos ถังขนาด 5 กิโลกรัม ราคา 2,500 บาท กรอบอร่อยระดับตำนาน',
+        fullDesc: 'แป้งชุบทอดสูตรลับจากครัว Los Pollos Hermanos บรรจุถังขนาด 5 กิโลกรัม ราคา 2,500 บาท การันตีความกรอบโดยผู้จัดการสาขา Gus Fring',
         composition: [
-          { label: 'แป้งสาลีเกรดพรีเมียม', pct: 80, color: 'bg-yellow-400' },
-          { label: 'เครื่องเทศลับเม็กซิกัน', pct: 19.9, color: 'bg-orange-400' },
-          { label: 'ความน่าเกรงขามของกัส', pct: 0.1, color: 'bg-emerald-400' }
+          { label: 'แป้งชุบทอดเกรดพรีเมียม', pct: 80, color: 'bg-yellow-400' },
+          { label: 'เครื่องเทศสูตรลับ 11 ชนิด', pct: 20, color: 'bg-orange-400' }
         ],
         reviews: [
-          { user: 'Hank Schrader', stars: 5, text: 'ไก่ทอดร้านนี้อร่อยที่สุดในอัลบูเคอร์คี! กินฟรีทีไรฟินทุกที' },
-          { user: 'Lyle (พนักงานดีเด่น)', stars: 5, text: 'ผมขัดหม้อทอดสามรอบเพื่อให้ได้ความกรอบระดับนี้ครับบอส!' },
-          { user: 'Mike Ehrmantraut', stars: 4, text: 'ก็ดีนะ กินคู่กับแซนด์วิชพริกหยวกเข้ากันใช้ได้' }
+          { user: 'Hank Schrader', stars: 5, text: 'ไก่ทอดร้านนี้อร่อยที่สุดในอัลบูเคอร์คี! ซื้อถัง 5 กิโลกลับไปทอดเองที่บ้านเลย' },
+          { user: 'Lyle (พนักงานดีเด่น)', stars: 5, text: 'ผมขัดหม้อทอดสามรอบเพื่อให้ได้ความกรอบระดับนี้ครับบอส!' }
         ],
         svg: `
           <svg viewBox="0 0 200 150" class="w-full h-36" xmlns="http://www.w3.org/2000/svg">
@@ -932,7 +934,72 @@
             <circle cx="100" cy="82" r="24" fill="#fef08a" stroke="#dc2626" stroke-width="2.5"/>
             <path d="M90,88 Q100,66 110,88 Z" fill="#dc2626"/>
             <circle cx="100" cy="72" r="5" fill="#dc2626"/>
-            <text x="100" y="116" text-anchor="middle" font-size="9" fill="#7c2d12" font-family="monospace" font-weight="bold">LOS POLLOS</text>
+            <text x="100" y="116" text-anchor="middle" font-size="9" fill="#7c2d12" font-family="monospace" font-weight="bold">LOS POLLOS 5KG</text>
+          </svg>
+        `
+      },
+      {
+        id: 'hazmat-suit',
+        category: 'gear',
+        name: 'ชุดหมีกันสารเคมีสีเหลือง',
+        thaiName: 'Hazmat Suit พร้อมหน้ากากกรองอากาศ',
+        badge: 'LAB GEAR',
+        badgeColor: 'bg-yellow-500/20 text-yellow-300 border-yellow-400/50',
+        price: 3200,
+        purity: '100%',
+        rating: 4.9,
+        reviewsCount: 530,
+        formula: 'Hazmat + Respirator',
+        shortDesc: 'ชุดหมีกันสารเคมีสีเหลือง (Hazmat Suit) พร้อมหน้ากากกรองอากาศ ราคาชุดละ 3,200 บาท',
+        fullDesc: 'ชุดหมีกันสารเคมีสีเหลือง (Hazmat Suit) มาพร้อมหน้ากากกรองอากาศคู่ใจนักปรุงในแล็บ ราคาชุดละ 3,200 บาท ป้องกันไอระเหยและฝุ่นละอองครบชุด',
+        composition: [
+          { label: 'ชุดหมีกันสารเคมีสีเหลืองมาตรฐานแล็บ', pct: 70, color: 'bg-yellow-400' },
+          { label: 'หน้ากากกรองอากาศคู่ตัวกรอง', pct: 30, color: 'bg-emerald-400' }
+        ],
+        reviews: [
+          { user: 'Gale Boetticher', stars: 5, text: 'ใส่ชงกาแฟและปรุงในแล็บแล้วรู้สึกปลอดภัยและมีสมาธิมากครับ!' },
+          { user: 'Jesse Pinkman', stars: 5, text: 'ใส่แล้วเป่าลมให้พองเป็นบอลลูนสนุกดีครับ ฮ่าๆ' }
+        ],
+        svg: `
+          <svg viewBox="0 0 200 150" class="w-full h-36" xmlns="http://www.w3.org/2000/svg">
+            <path d="M84,26 Q100,14 116,26 L122,48 L148,68 L138,84 L122,72 L124,132 L104,132 L100,96 L96,132 L76,132 L78,72 L62,84 L52,68 L78,48 Z" fill="#facc15" stroke="#a16207" stroke-width="2.5"/>
+            <ellipse cx="100" cy="36" rx="13" ry="10" fill="#1e293b" stroke="#94a3b8" stroke-width="2"/>
+            <circle cx="92" cy="44" r="5" fill="#ec4899"/>
+            <circle cx="108" cy="44" r="5" fill="#ec4899"/>
+            <line x1="100" y1="52" x2="100" y2="94" stroke="#a16207" stroke-width="2"/>
+          </svg>
+        `
+      },
+      {
+        id: 'heisenberg-hat',
+        category: 'gear',
+        name: 'หมวกพอร์คพายและแว่นกันแดด',
+        thaiName: 'รุ่น Heisenberg Edition (สีดำ)',
+        badge: 'SAY MY NAME',
+        badgeColor: 'bg-emerald-500/20 text-emerald-300 border-emerald-400/50',
+        price: 1500,
+        purity: '100%',
+        rating: 5.0,
+        reviewsCount: 615,
+        formula: 'Porkpie + Shades',
+        shortDesc: 'หมวกพอร์คพายสีดำและแว่นกันแดดรุ่น Heisenberg Edition ราคาชุดละ 1,500 บาท ใส่แล้วออร่าจับทันที',
+        fullDesc: 'หมวกพอร์คพายสีดำและแว่นกันแดดรุ่น Heisenberg Edition ราคาชุดละ 1,500 บาท เปลี่ยนลุคอาจารย์เคมีธรรมดาให้กลายเป็นตำนานแห่งอัลบูเคอร์คี',
+        composition: [
+          { label: 'หมวกพอร์คพายผ้าสักหลาดสีดำ', pct: 60, color: 'bg-slate-400' },
+          { label: 'แว่นกันแดดกรอบดำ + ออร่า Heisenberg', pct: 40, color: 'bg-emerald-400' }
+        ],
+        reviews: [
+          { user: 'Walter White', stars: 5, text: 'Say my name... ใส่ชุดนี้ทีไรไม่มีใครกล้าหือ!' },
+          { user: 'Declan', stars: 5, text: 'แค่เห็นหมวกกับแว่นก็รู้แล้วว่าใครเป็นคนคุมตลาด' }
+        ],
+        svg: `
+          <svg viewBox="0 0 200 150" class="w-full h-36" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="100" cy="68" rx="68" ry="16" fill="#18181b" stroke="#2ecc71" stroke-width="2.5"/>
+            <path d="M58,64 L68,26 Q100,16 132,26 L142,64 Z" fill="#18181b" stroke="#2ecc71" stroke-width="2.5"/>
+            <rect x="63" y="54" width="74" height="7" fill="#f1c40f"/>
+            <rect x="56" y="92" width="38" height="22" rx="5" fill="#090d0b" stroke="#94a3b8" stroke-width="2.5"/>
+            <rect x="106" y="92" width="38" height="22" rx="5" fill="#090d0b" stroke="#94a3b8" stroke-width="2.5"/>
+            <line x1="94" y1="98" x2="106" y2="98" stroke="#94a3b8" stroke-width="3"/>
           </svg>
         `
       },
@@ -948,17 +1015,15 @@
         rating: 4.8,
         reviewsCount: 312,
         formula: 'Plastic + 1 SIM',
-        shortDesc: 'โทรเสร็จหักครึ่งทิ้งลงถังขยะได้ทันที แถมฟรีเบอร์ทนายซอลในปุ่มโทรด่วน #1',
-        fullDesc: 'มือถือฝาพับรุ่นคลาสสิก ออกแบบข้อพับมาให้ "หักดังเป๊าะ!" ได้ด้วยมือเดียวอย่างเท่ๆ แบตอึด 7 วัน ไร้ GPS แถมสติกเกอร์โฆษณา Better Call Saul ในกล่อง',
+        shortDesc: 'โทรเสร็จหักครึ่งทิ้งลงถังขยะได้ทันที แถมฟรีเบอร์ทนาย Saul Goodman (505-503-4455)',
+        fullDesc: 'มือถือฝาพับรุ่นคลาสสิก ออกแบบข้อพับมาให้หักดังเป๊าะได้ด้วยมือเดียว ไร้ GPS เมมเบอร์ด่วนสำนักงานทนาย Saul Goodman (505-503-4455) ไว้ให้แล้ว',
         composition: [
           { label: 'พลาสติกหักง่ายเสียงดังเป๊าะ', pct: 70, color: 'bg-slate-400' },
-          { label: 'ซิมเติมเงินไม่ลงทะเบียน (ปลอม)', pct: 20, color: 'bg-emerald-400' },
-          { label: 'สกิลการเจรจาของซอล', pct: 10, color: 'bg-yellow-400' }
+          { label: 'เบอร์ด่วนทนาย Saul (505-503-4455)', pct: 30, color: 'bg-yellow-400' }
         ],
         reviews: [
-          { user: 'Saul Goodman', stars: 5, text: 'จำไว้เพื่อน! โทรเสร็จแล้วหักทิ้งเลย อย่าเก็บไว้ให้เมียเจอ!' },
-          { user: 'Skyler White', stars: 1, text: 'ทำไมมือถือมันดังในห้องน้ำ?! วอลต์ นี่แกมีมือถือสองเครื่องเหรอ?!' },
-          { user: 'Huell Babineaux', stars: 5, text: 'Reasonably good. ปุ่มใหญ่กดง่ายดีครับ' }
+          { user: 'Saul Goodman', stars: 5, text: 'จำไว้เพื่อน! โทรเสร็จแล้วหักทิ้งเลย ถ้าโดนแฮงค์บุกโทรหาผมที่ 505-503-4455!' },
+          { user: 'Skyler White', stars: 1, text: 'ทำไมมือถือมันดังในห้องน้ำ?! วอลต์ นี่แกมีมือถือสองเครื่องเหรอ?!' }
         ],
         svg: `
           <svg viewBox="0 0 200 150" class="w-full h-36" xmlns="http://www.w3.org/2000/svg">
@@ -973,73 +1038,6 @@
               <circle cx="84" cy="109" r="4"/><circle cx="100" cy="109" r="4"/><circle cx="116" cy="109" r="4"/>
               <circle cx="84" cy="123" r="4"/><circle cx="100" cy="123" r="4"/><circle cx="116" cy="123" r="4"/>
             </g>
-            <path d="M138,76 L154,68 M138,76 L154,84" stroke="#facc15" stroke-width="2.5" stroke-linecap="round"/>
-          </svg>
-        `
-      },
-      {
-        id: 'stevia-crap',
-        category: 'lab',
-        name: 'Stevia Crap (หญ้าหวานลิเดีย)',
-        thaiName: 'หญ้าหวานซองใสชงชาร้อน',
-        badge: 'SUSPICIOUS',
-        badgeColor: 'bg-purple-500/20 text-purple-300 border-purple-400/50',
-        price: 120,
-        purity: '99.9%?',
-        rating: 3.9,
-        reviewsCount: 64,
-        formula: 'Steviol (No Ricin!)',
-        shortDesc: 'ซองใสบริสุทธิ์ ชงชาร้อนๆ ดื่มแล้วหวานละมุน ปลอดภัย 99.9% (มั้ง?)',
-        fullDesc: 'สารให้ความหวานจากหญ้าหวาน 0 แคลอรี่ สำหรับสายคาเฟ่ที่ชอบนั่งโต๊ะเดิมทุกวันอังคาร เวลา 10 โมงตรง สั่งชาคาโมไมล์ใส่นมถั่วเหลือง... แน่นอนว่าปลอดภัยไร้ไรซิน 100% ครับ!',
-        composition: [
-          { label: 'สารสกัดหญ้าหวานแท้', pct: 99.9, color: 'bg-emerald-400' },
-          { label: 'ความหวาดระแวงของลิเดีย', pct: 0.1, color: 'bg-purple-400' }
-        ],
-        reviews: [
-          { user: 'Lydia Rodarte-Quayle', stars: 4, text: 'หวานดีค่ะ แต่ทำไมวันนี้รู้สึกเหมือนจะเป็นไข้หวัดเล็กน้อยนะ... เอ๊ะ?' },
-          { user: 'Todd Alquist', stars: 5, text: 'ผมชงให้คุณลิเดียทุกเช้าเลยครับ สะอาดแน่นอน' },
-          { user: 'Walter White', stars: 5, text: 'Goodbye, Lydia. เอ้ย ผมหมายถึง หญ้าหวานยี่ห้อนี้ดีมากครับ' }
-        ],
-        svg: `
-          <svg viewBox="0 0 200 150" class="w-full h-36" xmlns="http://www.w3.org/2000/svg">
-            <rect x="48" y="34" width="104" height="78" rx="6" fill="#ecfdf5" stroke="#10b981" stroke-width="3"/>
-            <path d="M48,44 L152,44" stroke="#10b981" stroke-width="1.5" stroke-dasharray="4 2"/>
-            <path d="M90,72 Q100,52 114,68 Q102,86 90,72 Z" fill="#22c55e"/>
-            <text x="100" y="96" text-anchor="middle" font-size="14" fill="#065f46" font-family="sans-serif" font-weight="bold">STEVIA</text>
-            <text x="100" y="132" text-anchor="middle" font-size="10" fill="#c084fc" font-family="monospace">0 CALORIES (PROBABLY SAFE)</text>
-          </svg>
-        `
-      },
-      {
-        id: 'hazmat-suit',
-        category: 'gear',
-        name: 'Yellow Hazmat Suit',
-        thaiName: 'ชุดหมีสีเหลืองกันฝุ่น PM2.5',
-        badge: 'FASHION ICON',
-        badgeColor: 'bg-yellow-500/20 text-yellow-300 border-yellow-400/50',
-        price: 1290,
-        purity: '100%',
-        rating: 4.9,
-        reviewsCount: 530,
-        formula: 'Tyvek + Style',
-        shortDesc: 'ใส่เดินเข้าเซเว่นคนมองทั้งซอย กันฝุ่น PM2.5 และกันกลิ่นผัดกะเพราติดเสื้อ',
-        fullDesc: 'ชุดคลุมกันสารเคมีสีเหลืองสดใส ไอคอนิกสุดๆ ระบายอากาศพอประมาณ (ร้อนหน่อยแต่หล่อมาก) มาพร้อมหน้ากากกรองอากาศทรงแล็บ เหมาะสำหรับทำกับข้าว ซักผ้า หรือเดินตลาดนัด',
-        composition: [
-          { label: 'ผ้าใยสังเคราะห์สีเหลืองจี๊ด', pct: 85, color: 'bg-yellow-400' },
-          { label: 'ความเท่ระดับโปสเตอร์ซีรีส์', pct: 15, color: 'bg-emerald-400' }
-        ],
-        reviews: [
-          { user: 'Gale Boetticher', stars: 5, text: 'ใส่ชงกาแฟในแล็บแล้วรู้สึกปลอดภัยและมีสมาธิมากครับ!' },
-          { user: 'Jesse Pinkman', stars: 5, text: 'ใส่แล้วเป่าลมให้พองเป็นบอลลูนสนุกดีครับ ฮ่าๆ' },
-          { user: 'ป้าข้างบ้าน', stars: 4, text: 'เห็นหลานใส่เดินไปซื้อหมูปิ้ง นึกว่ามาพ่นยากันยุง' }
-        ],
-        svg: `
-          <svg viewBox="0 0 200 150" class="w-full h-36" xmlns="http://www.w3.org/2000/svg">
-            <path d="M84,26 Q100,14 116,26 L122,48 L148,68 L138,84 L122,72 L124,132 L104,132 L100,96 L96,132 L76,132 L78,72 L62,84 L52,68 L78,48 Z" fill="#facc15" stroke="#a16207" stroke-width="2.5"/>
-            <ellipse cx="100" cy="36" rx="13" ry="10" fill="#1e293b" stroke="#94a3b8" stroke-width="2"/>
-            <circle cx="92" cy="44" r="5" fill="#ec4899"/>
-            <circle cx="108" cy="44" r="5" fill="#ec4899"/>
-            <line x1="100" y1="52" x2="100" y2="94" stroke="#a16207" stroke-width="2"/>
           </svg>
         `
       },
@@ -1055,16 +1053,15 @@
         rating: 4.7,
         reviewsCount: 215,
         formula: 'Soap + Wax + Clean',
-        shortDesc: 'ล้างสีดูดฝุ่น เคลือบแก้ว พร้อมฟอกความสะอาดระดับพรีเมียม สะอาดทั้งรถและประวัติ',
-        fullDesc: 'คูปองล้างรถแพ็กเกจ VIP จาก A1A Car Wash โดยสกายเลอร์ ไวท์ การันตีความสะอาดหมดจดทุกซอกมุม แถมฟรีน้ำหอมปรับอากาศกลิ่นต้นสนและคำอวยพร "Have an A1 Day!"',
+        shortDesc: 'ล้างสีดูดฝุ่น เคลือบแก้ว พร้อมฟอกความสะอาดระดับพรีเมียม สะอาดทั้งรถและบัญชี',
+        fullDesc: 'คูปองล้างรถแพ็กเกจ VIP จาก A1A Car Wash การันตีความสะอาดหมดจดทุกซอกมุม พร้อมคำอวยพร Have an A1 Day!',
         composition: [
           { label: 'โฟมล้างรถและแว็กซ์เงาวิ้ง', pct: 60, color: 'bg-cyan-400' },
           { label: 'บริการบัญชีสุดเนี้ยบของสกายเลอร์', pct: 40, color: 'bg-emerald-400' }
         ],
         reviews: [
-          { user: 'Bogdan (เจ้าของเดิม)', stars: 2, text: 'คิ้วผมสวยกว่าเจ้าของร้านคนใหม่อีก! แต่รถสะอาดจริงยอมรับ' },
           { user: 'Walter Jr.', stars: 5, text: 'เอา Dodge Challenger มาล้างทุกอาทิตย์เลยครับ เจ๋งสุดๆ!' },
-          { user: 'Saul Goodman', stars: 5, text: 'เสียดายน่าจะซื้อร้านเลเซอร์แท็กมากกว่า แต่ที่นี่ก็ฟอก... เอ้ย ล้างสะอาดดีครับ' }
+          { user: 'Saul Goodman', stars: 5, text: 'ล้างสะอาดทั้งรถทั้งประวัติเลยครับ' }
         ],
         svg: `
           <svg viewBox="0 0 200 150" class="w-full h-36" xmlns="http://www.w3.org/2000/svg">
@@ -1081,7 +1078,7 @@
         id: 'rv-tour',
         category: 'service',
         name: 'RV Lab Tour Package',
-        thaiName: 'ทัวร์รถบ้านกลางทะเลทราย 1 วัน',
+        thaiName: 'ทัวร์รถบ้านกลางทะเลทรายอัลบูเคอร์คี',
         badge: 'EXPERIENCE',
         badgeColor: 'bg-amber-500/20 text-amber-300 border-amber-400/50',
         price: 2990,
@@ -1089,16 +1086,14 @@
         rating: 5.0,
         reviewsCount: 147,
         formula: '1986 Fleetwood',
-        shortDesc: 'ทริปขับรถบ้าน Bounder ชมทะเลทรายอัลบูเคอร์คี พร้อมเวิร์กช็อปทำลูกอมและชงกาแฟ',
-        fullDesc: 'สัมผัสประสบการณ์ท่องเที่ยวสุดแหวกแนว! นั่งรถบ้าน Fleetwood Bounder รุ่นปี 1986 ออกไปปิกนิกกลางทะเลทราย เรียนรู้วิธีชาร์จแบตรถยนต์ด้วยวิชาเคมี (ในกรณีที่เพื่อนลืมดึงกุญแจออก) พร้อมอาหารกลางวันจาก Los Pollos!',
+        shortDesc: 'ทริปขับรถบ้าน Bounder ชมทะเลทรายอัลบูเคอร์คี พร้อมเวิร์กช็อปทำลูกอมน้ำตาลกรวดสีฟ้า',
+        fullDesc: 'นั่งรถบ้าน Fleetwood Bounder ออกไปปิกนิกกลางทะเลทรายอัลบูเคอร์คี เรียนรู้วิธีปรุงลูกอมน้ำตาลกรวดสีฟ้าและวิธีชาร์จแบตรถยนต์ด้วยวิชาเคมี',
         composition: [
-          { label: 'วิวทะเลทรายนิวเม็กซิโก 360°', pct: 50, color: 'bg-amber-400' },
-          { label: 'เวิร์กช็อปทำลูกอมสีฟ้า', pct: 35, color: 'bg-sky-400' },
-          { label: 'ลุ้นรถเสียกลางทาง', pct: 15, color: 'bg-red-400' }
+          { label: 'วิวทะเลทรายอัลบูเคอร์คี 360°', pct: 50, color: 'bg-amber-400' },
+          { label: 'เวิร์กช็อปทำลูกอมสีฟ้า', pct: 50, color: 'bg-sky-400' }
         ],
         reviews: [
-          { user: 'Combo', stars: 5, text: 'รถบ้านแม่ผมเองครับ แอร์เย็นบ้างไม่เย็นบ้างแต่ฟีลลิ่งได้เต็มสิบ!' },
-          { user: 'Badger', stars: 5, text: 'วิวพระอาทิตย์ตกสวยมาก ระวังอย่าเทน้ำดื่มทิ้งหมดถังนะครับ' },
+          { user: 'Combo', stars: 5, text: 'รถบ้านแม่ผมเองครับ ฟีลลิ่งกลางทะเลทรายได้เต็มสิบ!' },
           { user: 'Walter White', stars: 4, text: 'กรุณาอย่าเสียบกุญแจคาไว้เด็ดขาด ไม่งั้นต้องทำแบตจากเหรียญสตางค์!' }
         ],
         svg: `
@@ -1112,7 +1107,6 @@
             <polygon points="124,60 144,60 156,74 124,74" fill="#38bdf8" opacity="0.8"/>
             <circle cx="62" cy="108" r="12" fill="#1e293b" stroke="#94a3b8" stroke-width="3"/>
             <circle cx="138" cy="108" r="12" fill="#1e293b" stroke="#94a3b8" stroke-width="3"/>
-            <!-- Smoke from roof -->
             <circle cx="96" cy="38" r="7" fill="#cbd5e1" opacity="0.6"/>
             <circle cx="108" cy="26" r="10" fill="#cbd5e1" opacity="0.4"/>
           </svg>
@@ -1120,33 +1114,49 @@
       }
     ];
 
+    // =========================================================================
+    // 2. SHIPPING & PROMO RULES (ALIGNED 100% WITH docs/02 & docs/04)
+    // =========================================================================
     const SHIPPING_METHODS = {
-      rv: { name: 'รถบ้าน RV Express', price: 80 },
-      pollos: { name: 'รถขนไก่ Los Pollos', price: 150 },
-      pigeon: { name: 'นกพิราบสื่อสาร', price: 40 }
+      rv: { name: 'รถบ้าน RV กลางทะเลทราย (2 วันทำการ)', price: 300 },
+      pollos: { name: 'รถขนไก่ Los Pollos Hermanos (1 วันทำการ)', price: 500 },
+      pigeon: { name: 'นกพิราบสื่อสาร (5–7 วันทำการ)', price: 0 }
     };
 
     const PROMO_CODES = {
-      HEISENBERG: { type: 'percent', value: 20, label: 'HEISENBERG (-20%)', msg: 'You\'re goddamn right! ลดทันที 20%' },
-      YO: { type: 'flat', value: 100, label: 'YO (-฿100)', msg: 'Yeah, Science! เจสซี่ลดให้ 100 บาท Yo!' },
-      SAUL: { type: 'freeship', value: 0, label: 'SAUL (ส่งฟรี!)', msg: 'Better Call Saul! ทนายเคลียร์ค่าส่งให้ฟรี!' }
+      HEISENBERG: {
+        type: 'percent',
+        value: 20,
+        minSubtotal: 3000,
+        label: 'HEISENBERG (-20%)',
+        msg: 'You\'re goddamn right! ลดทันที 20% (ยอดซื้อครบ ฿3,000)'
+      },
+      YO: {
+        type: 'flat',
+        value: 500,
+        minSubtotal: 1500,
+        eligibleId: 'chili-p',
+        label: 'YO (-฿500)',
+        msg: 'Yeah, Science! เจสซี่ลดให้ ฿500 ทันที Yo!'
+      },
+      SAUL: {
+        type: 'freeship',
+        value: 0,
+        minSubtotal: 0,
+        label: 'SAUL (ส่งฟรี ฿0)',
+        msg: 'Better Call Saul! ลดค่าจัดส่งเหลือ ฿0 พร้อมรับสิทธิ์ปรึกษาคดีฟรี 1 ครั้ง!'
+      }
     };
 
-    // =========================================================================
-    // 2. APPLICATION STATE
-    // =========================================================================
     let state = {
       filter: 'all',
-      cart: [], // [{ id, qty }]
+      cart: [],
       shipping: 'rv',
       promo: null,
       lastReceiptText: '',
       pendingOrder: null
     };
 
-    // =========================================================================
-    // 3. OPTIONAL WEB AUDIO SYNTH (NO EXTERNAL SOUND FILES)
-    // =========================================================================
     function playSynthBeep(type = 'add') {
       try {
         const AudioCtx = window.AudioContext || window.webkitAudioContext;
@@ -1185,14 +1195,9 @@
           osc.start(now);
           osc.stop(now + 0.35);
         }
-      } catch (e) {
-        // Ignore audio context restrictions gracefully
-      }
+      } catch (e) {}
     }
 
-    // =========================================================================
-    // 4. RENDER PRODUCTS & FILTERING
-    // =========================================================================
     function formatTHB(num) {
       return '฿' + Math.round(num).toLocaleString('th-TH');
     }
@@ -1209,7 +1214,6 @@
 
       grid.innerHTML = filtered.map(p => `
         <article class="bg-lab-card border border-lab-border hover:border-lab-toxic/70 rounded-2xl overflow-hidden flex flex-col transition-all duration-200 hover:-translate-y-1 shadow-lg hover:shadow-emerald-950/60 group">
-          <!-- Product Visual Header -->
           <div class="relative bg-black/40 p-4 border-b border-lab-border/70">
             <span class="absolute top-3 left-3 px-2.5 py-0.5 rounded-lg border text-[10px] font-mono font-bold ${p.badgeColor}">
               ${p.badge}
@@ -1222,7 +1226,6 @@
             </div>
           </div>
 
-          <!-- Product Info -->
           <div class="p-4 flex-1 flex flex-col">
             <div class="flex items-center justify-between text-xs font-mono text-gray-400 mb-1">
               <span>${p.formula}</span>
@@ -1237,7 +1240,6 @@
               ${p.shortDesc}
             </p>
 
-            <!-- Price & Actions -->
             <div class="pt-3 border-t border-lab-border/70 space-y-2.5">
               <div class="flex items-baseline justify-between">
                 <span class="text-xl font-mono font-bold text-white">${formatTHB(p.price)}</span>
@@ -1276,9 +1278,6 @@
       renderProducts();
     }
 
-    // =========================================================================
-    // 5. PRODUCT LAB DETAIL MODAL
-    // =========================================================================
     function openProductModal(id) {
       const p = PRODUCTS.find(item => item.id === id);
       if (!p) return;
@@ -1308,7 +1307,6 @@
           </div>
         </div>
 
-        <!-- Fake Chemical Composition Breakdown -->
         <div class="bg-black/40 border border-lab-border rounded-2xl p-4 mb-5">
           <h4 class="text-xs font-mono uppercase text-lab-hazmat mb-3 flex items-center gap-2">
             <span>🧪</span> LAB COMPOSITION REPORT (${p.formula})
@@ -1328,7 +1326,6 @@
           </div>
         </div>
 
-        <!-- Character Customer Reviews -->
         <div>
           <h4 class="text-sm font-bold text-white mb-3 flex items-center gap-2">
             <span>💬</span> รีวิวจากลูกค้าขาประจำ (${p.reviews.length} ความเห็นเด่น)
@@ -1358,9 +1355,6 @@
       modal.classList.remove('flex');
     }
 
-    // =========================================================================
-    // 6. SHOPPING CART LOGIC & DEA THREAT LEVEL REACTIVITY
-    // =========================================================================
     function addToCart(productId) {
       const existing = state.cart.find(i => i.id === productId);
       if (existing) {
@@ -1389,6 +1383,22 @@
       updateCartUI();
     }
 
+    function isPromoValid(code, subtotal) {
+      if (!code || !PROMO_CODES[code]) return false;
+      const rule = PROMO_CODES[code];
+      if (code === 'HEISENBERG') {
+        return subtotal >= rule.minSubtotal;
+      }
+      if (code === 'YO') {
+        const hasJesseItem = state.cart.some(i => i.id === rule.eligibleId);
+        return hasJesseItem || subtotal >= rule.minSubtotal;
+      }
+      if (code === 'SAUL') {
+        return true;
+      }
+      return false;
+    }
+
     function calculateTotals() {
       const subtotal = state.cart.reduce((sum, item) => {
         const p = PRODUCTS.find(x => x.id === item.id);
@@ -1397,8 +1407,10 @@
 
       let shippingCost = state.cart.length > 0 ? SHIPPING_METHODS[state.shipping].price : 0;
       let discount = 0;
+      let promoApplied = false;
 
-      if (state.promo && state.cart.length > 0) {
+      if (state.promo && state.cart.length > 0 && isPromoValid(state.promo, subtotal)) {
+        promoApplied = true;
         const rule = PROMO_CODES[state.promo];
         if (rule.type === 'percent') {
           discount = Math.round(subtotal * (rule.value / 100));
@@ -1411,9 +1423,10 @@
       }
 
       const total = Math.max(0, subtotal - (state.promo === 'SAUL' ? 0 : discount) + shippingCost);
-      return { subtotal, discount, shippingCost, total };
+      return { subtotal, discount, shippingCost, total, promoApplied };
     }
 
+    // Aligned with docs/01-products.txt: >= 5 items turns DEA Threat Level to CRITICAL (red)
     function updateDeaThreatLevel() {
       const totalItems = state.cart.reduce((s, i) => s + i.qty, 0);
       const ping = document.getElementById('dea-ping');
@@ -1425,16 +1438,16 @@
         dot.className = 'relative inline-flex rounded-full h-2.5 w-2.5 bg-lab-toxic';
         text.className = 'font-semibold text-lab-toxic';
         text.textContent = 'LOW — แฮงค์กำลังสะสมหินแร่อยู่บ้าน';
-      } else if (totalItems <= 3) {
+      } else if (totalItems < 5) {
         ping.className = 'animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75';
         dot.className = 'relative inline-flex rounded-full h-2.5 w-2.5 bg-yellow-400';
         text.className = 'font-semibold text-yellow-400';
-        text.textContent = 'ELEVATED — แฮงค์เริ่มสงสัยในถุงซิปล็อกของคุณ';
+        text.textContent = `ELEVATED (${totalItems}/5 ชิ้น) — แฮงค์เริ่มสงสัยในถุงซิปล็อกของคุณ`;
       } else {
         ping.className = 'animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75';
         dot.className = 'relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500';
         text.className = 'font-semibold text-red-400';
-        text.textContent = 'CRITICAL! — รถ DEA มาจอดซุ่มหน้าปากซอยแล้ว!';
+        text.textContent = `CRITICAL! (${totalItems} ชิ้น) — ครบ 5 ชิ้นขึ้นไป DEA ยกระดับสีแดงสูงสุด!`;
       }
     }
 
@@ -1445,6 +1458,9 @@
       const itemsContainer = document.getElementById('cart-items-container');
       const extras = document.getElementById('cart-extras');
       const checkoutBtn = document.getElementById('checkout-btn');
+      const ruleWarning = document.getElementById('cart-rule-warning');
+
+      const { subtotal, discount, shippingCost, total, promoApplied } = calculateTotals();
 
       if (state.cart.length === 0) {
         itemsContainer.innerHTML = `
@@ -1455,10 +1471,28 @@
           </div>
         `;
         extras.classList.add('hidden');
+        ruleWarning.classList.add('hidden');
         checkoutBtn.disabled = true;
       } else {
         extras.classList.remove('hidden');
-        checkoutBtn.disabled = false;
+
+        // Check ordering rules from 02-ordering.txt (min 500 THB, max 10 items)
+        let blockedReason = '';
+        if (subtotal < 500) {
+          blockedReason = '⚠️ ยอดสั่งซื้อขั้นต่ำต้องไม่น้อยกว่า 500 บาท ตามระเบียบหน้าร้าน';
+        } else if (totalCount > 10) {
+          blockedReason = '⚠️ ลูกค้าทั่วไปสั่งซื้อได้ไม่เกิน 10 ชิ้นต่อออเดอร์ (เกิน 10 ชิ้นต้องติดต่อ Gus Fring โทร 505-503-4403)';
+        }
+
+        if (blockedReason) {
+          ruleWarning.textContent = blockedReason;
+          ruleWarning.classList.remove('hidden');
+          checkoutBtn.disabled = true;
+        } else {
+          ruleWarning.classList.add('hidden');
+          checkoutBtn.disabled = false;
+        }
+
         itemsContainer.innerHTML = state.cart.map(item => {
           const p = PRODUCTS.find(x => x.id === item.id);
           return `
@@ -1484,17 +1518,15 @@
         }).join('');
       }
 
-      // Totals update
-      const { subtotal, discount, shippingCost, total } = calculateTotals();
       document.getElementById('cart-subtotal').textContent = formatTHB(subtotal);
-      document.getElementById('cart-shipping').textContent = shippingCost === 0 && state.cart.length > 0 ? 'ฟรี! (SAUL)' : formatTHB(shippingCost);
+      document.getElementById('cart-shipping').textContent = shippingCost === 0 && state.cart.length > 0 ? 'ฟรี! (฿0)' : formatTHB(shippingCost);
       document.getElementById('cart-total').textContent = formatTHB(total);
 
       const discountRow = document.getElementById('cart-discount-row');
-      if (state.promo && state.cart.length > 0) {
+      if (promoApplied && state.cart.length > 0) {
         discountRow.classList.remove('hidden');
         document.getElementById('cart-discount-label').textContent = `โค้ด ${PROMO_CODES[state.promo].label}`;
-        document.getElementById('cart-discount').textContent = state.promo === 'SAUL' ? 'ส่งฟรี' : '-' + formatTHB(discount);
+        document.getElementById('cart-discount').textContent = state.promo === 'SAUL' ? 'ส่งฟรี ฿0' : '-' + formatTHB(discount);
       } else {
         discountRow.classList.add('hidden');
       }
@@ -1523,6 +1555,7 @@
       const input = document.getElementById('promo-input');
       const feedback = document.getElementById('promo-feedback');
       const code = input.value.trim().toUpperCase();
+      const { subtotal } = calculateTotals();
 
       if (!code) {
         state.promo = null;
@@ -1531,14 +1564,29 @@
         return;
       }
 
-      if (PROMO_CODES[code]) {
-        state.promo = code;
-        feedback.innerHTML = `<span class="text-lab-toxic">✓ ${PROMO_CODES[code].msg}</span>`;
-        playSynthBeep('saul');
-        updateCartUI();
-      } else {
+      if (!PROMO_CODES[code]) {
         feedback.innerHTML = `<span class="text-red-400">✕ ไม่มีโค้ด "${code}" ในแล็บ ลอง HEISENBERG, YO หรือ SAUL</span>`;
+        return;
       }
+
+      if (code === 'HEISENBERG' && subtotal < 3000) {
+        state.promo = null;
+        feedback.innerHTML = `<span class="text-amber-400">⚠️ โค้ด HEISENBERG ต้องมียอดสั่งซื้อรวมตั้งแต่ ฿3,000 ขึ้นไป</span>`;
+        updateCartUI();
+        return;
+      }
+
+      if (code === 'YO' && !isPromoValid('YO', subtotal)) {
+        state.promo = null;
+        feedback.innerHTML = `<span class="text-amber-400">⚠️ โค้ด YO ใช้ได้กับรุ่น Chili P หรือยอดซื้อขั้นต่ำ ฿1,500</span>`;
+        updateCartUI();
+        return;
+      }
+
+      state.promo = code;
+      feedback.innerHTML = `<span class="text-lab-toxic">✓ ${PROMO_CODES[code].msg}</span>`;
+      playSynthBeep('saul');
+      updateCartUI();
     }
 
     function fillAndApplyPromo(code) {
@@ -1548,16 +1596,13 @@
 
     function applyQuickPromo(code) {
       if (state.cart.length === 0) {
-        addToCart('blue-sky');
+        addToCart(code === 'YO' ? 'chili-p' : 'blue-sky');
       }
       document.getElementById('promo-input').value = code;
       applyPromoCode();
       toggleCart(true);
     }
 
-    // =========================================================================
-    // 7. FAKE CHECKOUT, COOKING ANIMATION, RECEIPT & DEA RAID
-    // =========================================================================
     function openCheckoutModal() {
       if (state.cart.length === 0) return;
       toggleCart(false);
@@ -1576,11 +1621,11 @@
 
     function generateRandomAlias() {
       const aliases = [
-        'Heisenberg สาขาบางนา',
-        'Cap\'n Cook แห่งลาดพร้าว',
+        'Heisenberg สาขาอัลบูเคอร์คี',
+        'Cap\'n Cook แห่งอู่ซ่อมรถ',
         'Slippin\' Jimmy 991',
         'El Camino Express',
-        'คุณชายไก่ทอด Los Pollos',
+        'ผู้จัดการ Los Pollos',
         'อาจารย์เคมีหัวใส'
       ];
       document.getElementById('buyer-alias').value = aliases[Math.floor(Math.random() * aliases.length)];
@@ -1594,7 +1639,7 @@
       const totals = calculateTotals();
 
       state.pendingOrder = {
-        orderId: `BR-BA-991-${Math.floor(1000 + Math.random() * 9000)}`,
+        orderId: `HM-991-${Math.floor(1000 + Math.random() * 9000)}`,
         alias,
         dropoff,
         payment,
@@ -1604,7 +1649,7 @@
           return { name: p.name, qty: i.qty, price: p.price };
         }),
         totals,
-        promo: state.promo
+        promo: totals.promoApplied ? state.promo : null
       };
 
       closeCheckoutModal();
@@ -1621,9 +1666,9 @@
       bar.style.width = '0%';
 
       const steps = [
-        { pct: 25, text: '⚗️ กำลังชั่งตวงน้ำตาลรสมินต์ 99.1%...' },
-        { pct: 55, text: '🍗 ซ่อนถุงซิปล็อกไว้ในถังแป้งทอดไก่...' },
-        { pct: 80, text: '📡 เช็กเรดาร์หาสัญญาณรถแฮงค์ ชเรเดอร์...' },
+        { pct: 25, text: '⚗️ กำลังชั่งตวงลูกอมน้ำตาลกรวดสีฟ้า 99.1%...' },
+        { pct: 55, text: '🍗 บรรจุลงถุงซิปล็อกและเตรียมรถขนส่ง...' },
+        { pct: 80, text: '📡 เช็กเรดาร์หาเจ้าหน้าที่แฮงค์ (Hank)...' },
         { pct: 100, text: '✅ เสร็จสิ้นขั้นตอนการปรุง!' }
       ];
 
@@ -1639,7 +1684,7 @@
             modal.classList.add('hidden');
             modal.classList.remove('flex');
 
-            // 25% chance of DEA Raid!
+            // 25% chance of DEA Raid (Aligned with docs/03-cancellation.txt)
             if (Math.random() < 0.25) {
               triggerDeaRaid('checkout');
             } else {
@@ -1689,7 +1734,7 @@
         <div class="border-t border-dashed border-gray-700 pt-3 space-y-1">
           <div class="flex justify-between text-gray-400">
             <span>ค่าส่ง:</span>
-            <span>${order.totals.shippingCost === 0 ? 'ฟรี (SAUL)' : formatTHB(order.totals.shippingCost)}</span>
+            <span>${order.totals.shippingCost === 0 ? 'ฟรี ฿0' : formatTHB(order.totals.shippingCost)}</span>
           </div>
           ${order.promo && order.promo !== 'SAUL' ? `
             <div class="flex justify-between text-lab-toxic">
@@ -1704,16 +1749,14 @@
         </div>
       `;
 
-      // Plain text summary for clipboard copy
       state.lastReceiptText =
         `[He]isenberg [Ma]rket — ใบเสร็จทิพย์\n` +
         `Order: ${order.orderId}\n` +
         `นามแฝง: ${order.alias}\n` +
         `จุดนัดรับ: ${order.dropoff}\n` +
         `สินค้า: ${order.items.map(x => `${x.name} x${x.qty}`).join(', ')}\n` +
-        `ยอดรวมทิพย์: ${formatTHB(order.totals.total)} (เว็บล้อเลียน Breaking Bad เพื่อความฮา 100%)`;
+        `ยอดรวมทิพย์: ${formatTHB(order.totals.total)}`;
 
-      // Clear cart after successful fake order
       state.cart = [];
       state.promo = null;
       document.getElementById('promo-input').value = '';
@@ -1733,7 +1776,6 @@
     }
 
     function copyReceiptText() {
-      // Use document.execCommand('copy') for iFrame compatibility
       try {
         const textarea = document.createElement('textarea');
         textarea.value = state.lastReceiptText;
@@ -1749,17 +1791,14 @@
       }
     }
 
-    // =========================================================================
-    // 8. DEA RAID OVERLAY & BETTER CALL SAUL
-    // =========================================================================
     let raidSource = 'manual';
 
     function triggerDeaRaid(source) {
       raidSource = source;
       const quotes = [
-        '"จับได้คาหนังคาเขา! นี่มันลูกอมคริสตัลสีฟ้าสูตรนายวอลเตอร์ใช่มั้ย?! แมรี่ หยิบกุญแจมือมาให้ที... เอ้ย ไม่ใช่หินแร่นะเว้ย!"',
-        '"ASAC Schrader เองครับ! เห็นสั่งแป้งทอดไก่ Los Pollos เยอะผิดปกติ ขอค้นถุงซิปล็อกหน่อยนะพ่อหนุ่ม!"',
-        '"W.W. ย่อมาจากอะไร... Woodrow Wilson? Willy Wonka? หรือ... Walter White?! ยกมือขึ้นเดี๋ยวนี้!"'
+        '"จับได้คาหนังคาเขา! เจ้าหน้าที่แฮงค์ (Hank) ตรวจพบความเคลื่อนไหวในถุงซิปล็อก ออเดอร์ถูกระงับชั่วคราวแล้ว!"',
+        '"ASAC Schrader เองครับ! เห็นสั่งแป้งทอดไก่ Los Pollos ถัง 5 กิโลเยอะผิดปกติ ขอระงับออเดอร์ตรวจสอบหน่อย!"',
+        '"W.W. ย่อมาจากอะไร... Walter White?! ยกมือขึ้นเดี๋ยวนี้ ออเดอร์ถูกระงับชั่วคราว!"'
       ];
       document.getElementById('hank-quote').textContent = quotes[Math.floor(Math.random() * quotes.length)];
 
@@ -1775,9 +1814,8 @@
       overlay.classList.remove('flex');
       playSynthBeep('saul');
 
-      showToast('⚖️ Saul Goodman: "ผมเคลียร์กับแฮงค์ให้แล้ว! เขาแยกไม่ออกระหว่างลูกอมมินต์กับหินแร่ คุณรอดตัวแล้วเพื่อน!"');
+      showToast('⚖️ ทนาย Saul Goodman (505-503-4455): "ผมเคลียร์คดีกับแฮงค์ให้แล้ว! ออเดอร์กลับมาใช้งานต่อได้ตามปกติครับ!"');
 
-      // If raid happened during checkout, let Saul still deliver the fake receipt!
       if (raidSource === 'checkout' && state.pendingOrder) {
         setTimeout(() => {
           showFakeReceipt();
@@ -1785,9 +1823,6 @@
       }
     }
 
-    // =========================================================================
-    // 9. PANIC MODE (VACUUM REPAIR CAMOUFLAGE) & FUN EXTRAS
-    // =========================================================================
     function togglePanicMode(enable) {
       const mainApp = document.getElementById('main-app');
       const vacuumMode = document.getElementById('vacuum-mode');
@@ -1796,7 +1831,7 @@
         vacuumMode.classList.remove('hidden');
         document.title = 'Best Quality Vacuum — ร้านซ่อมเครื่องดูดฝุ่นเบสต์ควอลิตี้';
         window.scrollTo({ top: 0, behavior: 'instant' });
-        showToast('🧹 เปิดโหมดพรางตัวสำเร็จ! ตอนนี้คุณคือลูกค้าซ่อมเครื่องดูดฝุ่นผู้บริสุทธิ์');
+        showToast('🧹 เปิดโหมดหนีตำรวจสำเร็จ! เปลี่ยนเป็นร้านซ่อมเครื่องดูดฝุ่น Best Quality Vacuum แล้ว');
       } else {
         vacuumMode.classList.add('hidden');
         mainApp.classList.remove('hidden');
@@ -1816,10 +1851,9 @@
 
       setTimeout(() => {
         const samples = [
-          { p: 99.1, txt: '"นี่มันระดับศิลปะ... ไม่ใช่แค่ลูกอมรสมินต์!" — Mr. White' },
-          { p: 99.4, txt: '"สถิติใหม่! กัส ฟริง ยิ้มมุมปากเลยทีเดียว" — Gale' },
-          { p: 96.2, txt: '"เกือบดีแล้วเจสซี่ แต่คราวหน้าอย่าแอบใส่พริกป่น!" — Mr. White' },
-          { p: 99.8, txt: '"บริสุทธิ์จนแฮงค์นึกว่าเป็นหินแร่หายาก!" — Lab AI' }
+          { p: 99.1, txt: '"Blue Sky สูตรต้นตำรับของ Heisenberg ความบริสุทธิ์ 99.1%!" — Mr. White' },
+          { p: 68.5, txt: '"รุ่น Chili P ผสมพริกป่นของ Jesse Pinkman ความบริสุทธิ์ 68.5% Yo!" — Jesse' },
+          { p: 99.9, txt: '"แป้งชุบทอดสูตรลับ Los Pollos Hermanos มาตรฐานระดับกัส ฟริง" — Gale' }
         ];
         const pick = samples[Math.floor(Math.random() * samples.length)];
         bar.style.width = pick.p + '%';
@@ -1829,9 +1863,6 @@
       }, 450);
     }
 
-    // =========================================================================
-    // 10. TOAST & UTILITIES
-    // =========================================================================
     function showToast(message) {
       const container = document.getElementById('toast-container');
       const toast = document.createElement('div');
@@ -1855,7 +1886,6 @@
       return div.innerHTML;
     }
 
-    // Close modals with Escape key
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         closeProductModal();
@@ -1865,14 +1895,12 @@
       }
     });
 
-    // Initialize App
     window.addEventListener('DOMContentLoaded', () => {
       renderProducts();
       updateCartUI();
     });
   </script>
 
-<script src="chat-widget.js"></script>
-
+  <script src="chat-widget.js"></script>
 </body>
 </html>
