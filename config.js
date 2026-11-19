@@ -11,7 +11,7 @@ window.CONFIG = {
 
 
   /* ===== การค้นหา ===== */
-  SEARCH_MODE: "local",
+  SEARCH_MODE: "vector", //vector or local
   EMBED_MODEL: "nvidia/nemotron-3.5-embed-1b:free",
   VECTORS_FILE: "vectors.json",
 
